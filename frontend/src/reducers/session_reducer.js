@@ -23,6 +23,8 @@ import { RECEIVE_CURRENT_USER,
       case RECEIVE_USER_SIGN_IN:
         return {
         ...state,
+        isAuthenticated: !!action.currentUser,
+        user: action.currentUser,
         isSignedIn: true
         }
       default:
