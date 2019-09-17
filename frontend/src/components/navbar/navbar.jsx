@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css'
 
-export default ({ user, logout, openModal, openSideNav }) => {
+export default ({ user, logout, openModal}) => {
   let display;
   if (user) {
     display = {
-            link1: <Link className="user-page" to={`/api/user/${user.id}`}><span >{user.username ? `Welcome, ${user.username}` : user.email }</span></Link>,
+            link1: <span >{user.username ? `Welcome, ${user.username}` : user.email }</span>,
             link2: <a onClick={logout}>Logout</a>
     }
    } else{ 

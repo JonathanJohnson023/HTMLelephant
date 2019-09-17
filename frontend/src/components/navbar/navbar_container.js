@@ -5,7 +5,7 @@ import {logout} from "../../actions/session_actions";
 import {openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state) =>({
-  // user: state.entities.session
+  user: state.session.isAuthenticated
 })
 
 const mapDispatchToProps = (dispatch) =>({ 
