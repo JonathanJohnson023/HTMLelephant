@@ -7,8 +7,7 @@ class SignupForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            password2: '',
-            errors: {}
+            password2: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,11 +19,11 @@ class SignupForm extends React.Component {
             this.props.history.push('/login');
         }
 
-        this.setState({ errors: nextProps.errors })
+        // this.setState({ errors: nextProps.errors })
     }
 
     componentWillUnmount() {
-        this.props.removeModal();
+        // this.props.closeModal();
     }
 
     update(field) {
@@ -48,9 +47,9 @@ class SignupForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
@@ -60,7 +59,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className='modal-background'
-                // onClick={this.props.removeModal} to close the splash if a user clicks outside of the splash 
+                // onClick={this.props.closeModal} to close the splash if a user clicks outside of the splash 
                 >
                 <form onSubmit={this.handleSubmit}>
                     <div className="login-form">

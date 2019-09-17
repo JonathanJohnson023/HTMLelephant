@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeModal } from '../../actions/ui_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     signup: user => dispatch(signup(user)),
-    removeModal: () => dispatch(removeModal())
+    closeModal: () => dispatch(closeModal())
   }
 }
 
