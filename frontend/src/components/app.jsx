@@ -11,9 +11,9 @@ const App = () => (
     <header>
       <NavBarContainer />
     </header>
-    <Switch>
+    {/* <Switch>
       {/* <Route exact path="/" component={}/> */}
-    </Switch>
+    {/* </Switch> */} 
   </div>
 );
 
