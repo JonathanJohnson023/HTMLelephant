@@ -93,7 +93,7 @@ class LoginForm extends React.Component {
                 >
 
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="modal-form-form" id='modal-login-form'>
                         <br />
                         <input type="text"
                             value={this.state.email}
@@ -107,7 +107,7 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input id='modal-button' type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
                 </form>
