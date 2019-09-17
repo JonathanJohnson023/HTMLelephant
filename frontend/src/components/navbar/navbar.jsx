@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default ({ user, logout, openModal, openSideNav }) => {
+export default ({ user, logout, openModal}) => {
   let display;
   if (user) {
     display = {

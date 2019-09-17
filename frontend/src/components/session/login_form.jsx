@@ -7,8 +7,7 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: '',
-            errors: {}
+            password: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,17 +16,17 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            // this.props.history.push('/profile');
-        }
-
-        this.setState({ errors: nextProps.errors })
-    }
-
     componentWillUnmount() {
-        this.props.removeModal();
+        this.props.clearErrors();
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         // this.props.history.push('/profile');
+    //     }
+
+    //     // this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -77,19 +76,20 @@ class LoginForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
         );
     }
 
+
     render() {
         return (
             <div className='modal-background'
-                // onClick={this.props.removeModal}
+                // onClick={this.props.closeModal}
                 >
 
                 <form onSubmit={this.handleSubmit}>
