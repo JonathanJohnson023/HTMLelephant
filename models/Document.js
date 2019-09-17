@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const DocumentSchema = new Schema({
   tags: {
     type: Schema.Types.ObjectId,
-    ref: tags
+    ref: 'tags'
   },
   title: {
     type: String,
@@ -16,4 +16,4 @@ const DocumentSchema = new Schema({
   }
 });
 
-module.exports = DocumentSchema = mongoose.model('Document', DocumentSchema);
+module.exports = Document = mongoose.model('document', DocumentSchema);
