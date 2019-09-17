@@ -23,7 +23,7 @@ export default ({ user, logout, openModal, openSideNav }) => {
         </div>
 
         <div className="east-side">
-            <span>Index</span>
+            
           <div className="the-righters">
 
             <div className="user-stuff">
