@@ -1,0 +1,37 @@
+.modal-background {
+    width: 20%;
+    position: fixed;
+    background: aliceblue;
+    left: 40%;
+    top: 20%;
+}
+
+.modal-child {
+    margin: 20px;
+
+}
+
+#session-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.session-form-element {
+    margin-top: 7.5px;
+    padding: 10px;
+    color: cornflowerblue;
+    font-size: 16px;
+    border:double;
+}
+
+#session-form button{
+    border: none;
+    padding: 4%;
+    border-radius: 15px;
+    color: cornflowerblue;
+    font-size: 16px;
+    background: lightpink;
+    font-family: 'DM Sans', sans-serif;
+    width: 75%;
+    align-self: center;
+}

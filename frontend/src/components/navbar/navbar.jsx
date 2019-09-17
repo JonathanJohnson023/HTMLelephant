@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './nav.css'
 
 export default ({ user, logout, openModal, openSideNav }) => {
   let display;
@@ -19,7 +19,7 @@ export default ({ user, logout, openModal, openSideNav }) => {
     return (
       <div className="navbar">
         <div className="west-side">
-
+          <h1>HTML Elephant</h1>
         </div>
 
         <div className="east-side">
