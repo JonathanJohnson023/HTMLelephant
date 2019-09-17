@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div
-        className="modal-background"
+        className="modal-form"
         // onClick={this.props.closeModal} to close the splash if a user clicks outside of the splash
       >
         <form onSubmit={this.handleSubmit}>

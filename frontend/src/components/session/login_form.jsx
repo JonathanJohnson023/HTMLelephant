@@ -88,7 +88,7 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className='modal-background'
+            <div className='modal-form'
                 // onClick={this.props.closeModal}
                 >
 
