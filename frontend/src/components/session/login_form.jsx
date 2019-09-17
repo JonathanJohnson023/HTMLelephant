@@ -16,17 +16,17 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            // this.props.history.push('/profile');
-        }
-
-        // this.setState({ errors: nextProps.errors })
-    }
-
     componentWillUnmount() {
-        // this.props.closeModal();
+        this.props.clearErrors();
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         // this.props.history.push('/profile');
+    //     }
+
+    //     // this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -84,6 +84,7 @@ class LoginForm extends React.Component {
             </ul>
         );
     }
+
 
     render() {
         return (
