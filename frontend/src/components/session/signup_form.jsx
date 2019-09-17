@@ -64,22 +64,22 @@ class SignupForm extends React.Component {
         // onClick={this.props.closeModal} to close the splash if a user clicks outside of the splash
       >
         <form onSubmit={this.handleSubmit}>
-          <div className="login-form">
-            <br />
+          <div className="modal-form-form" id='modal-signup-form'>
+            
             <input
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
             />
-            <br />
+            
             <input
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
             />
-            <br />
+            
             <input
               type="password"
               value={this.state.password2}
@@ -87,7 +87,7 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input id='modal-button' type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>

@@ -5,14 +5,25 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    animation: .5s ease-out 0s 1 slideInFromTop;
 }
 
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
 .east-side {
-    margin: 20px;
+    margin-right: 40px;
 }
 
 .west-side {
-    margin: 20px;
+    margin-left: 5%;
     color: cornflowerblue
 }
 
@@ -26,9 +37,43 @@
     margin: 10px;
     font-family: 'DM Sans', sans-serif;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .username-email li:hover{
-    color: cornflowerblue
+    transition: all .25s ease-in-out;
+    color: cornflowerblue;
     
+}
+
+#nav-logo {
+    display: flex;
+   
+}
+
+#nav-logo-ele {
+    background: url('./ele.png') no-repeat;
+    height: 66px;
+    width: 90px;
+    background-size: contain;
+    transition: all .75s;
+    cursor: pointer;
+}
+
+#nav-logo-tag-1 {
+    background: url('./open.png') no-repeat;
+    height: 66px;
+    width: 60px;
+    background-size: contain;
+}
+
+#nav-logo-tag-2 {
+    background: url('./close.png') no-repeat;
+    height: 66px;
+    width: 60px;
+    background-size: contain;
+}
+
+#nav-logo-ele:hover {
+   transform: rotate(10deg)
 }

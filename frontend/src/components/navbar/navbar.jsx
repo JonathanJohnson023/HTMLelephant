@@ -19,7 +19,11 @@ export default ({ user, logout, openModal}) => {
     return (
       <div className="navbar">
         <div className="west-side">
-          <h1>HTML Elephant</h1>
+          <div id='nav-logo'>
+            <div id='nav-logo-tag-1'></div>
+            <div id='nav-logo-ele'></div>
+            <div id='nav-logo-tag-2'></div>
+          </div>
         </div>
 
         <div className="east-side">
