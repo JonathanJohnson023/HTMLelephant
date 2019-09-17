@@ -1,14 +1,18 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
-
-import LoginFormContainer from "./session/login_from_container"
+import Modal from "./modal/modal"
+import NavBarContainer from "./navbar/navbar_container";
 
 const App = () => (
 
-  <div>    
+  <div id="main">
+    <Modal />
+    <header>
+      <NavBarContainer />
+    </header>
     <Switch>
-      <Route exact path="/" component={LoginFormContainer}/>
+      {/* <Route exact path="/" component={}/> */}
     </Switch>
   </div>
 );
