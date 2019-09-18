@@ -6,6 +6,8 @@
     justify-content: space-between;
     align-items: center;
     animation: .5s ease-out 0s 1 slideInFromTop;
+    position: fixed;
+    top: 0;
 }
 
 @keyframes slideInFromTop {
@@ -51,7 +53,7 @@
 }
 
 .username-email li:hover{
-    transition: all .25s ease-in-out;
+    transition: all .15s ease-in-out;
     color: cornflowerblue;
     
 }
@@ -96,5 +98,5 @@
 }
 
 #nav-logo-ele:hover {
-   transform: rotate(10deg)
+   transform: rotate(32deg)
 }

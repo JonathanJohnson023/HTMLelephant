@@ -1,11 +1,19 @@
 .modal-background {
-    position: absolute;
-    background: rgba(0, 0, 95, 0.6);
+    position: fixed;
+    background: rgba(0, 0, 95, 0.8);
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     transition: all .25s ease-in-out;
     display: flex;
     justify-content: center;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.modal-background:hover {
+    opacity: 1;
+    transition: all .45s ease-in-out;
 }
 
 .modal-child {
@@ -13,14 +21,10 @@
     background: cornflowerblue;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     width: fit-content;
     position: absolute;
     top: 20%;
-    width:50%;
-    height: 25%;
-    max-width: 666px;
-    min-width: 375px;
-    min-height: 250px;
     justify-content: space-around;
     border-radius: 7px;
 }
@@ -28,7 +32,7 @@
 
 .modal-child h1 {
     font-size: 85px;
-    width: 50%;
+  
     overflow-wrap: break-word;
     color: lightpink;
     margin-top: 5%;
@@ -36,6 +40,8 @@
     font-family: 'DM Sans', sans-serif;
     text-decoration: underline;
     line-height: 69px;
+    padding: 15px;
+    margin-bottom: 0px;
 }
 
 
@@ -43,7 +49,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+   
 }
 
 .modal-form-form {
@@ -59,7 +65,7 @@
 .modal-form input {
     margin-top: 7.5px;
     padding: 10px;
-    color: black;
+    color: navy;
     font-size: 16px;
     border:none;
 }
@@ -68,7 +74,7 @@
     border: none;
     padding: 4%;
     border-radius: 15px;
-    color: cornflowerblue;
+    color: navy;
     font-size: 16px;
     background: lightpink;
     font-family: 'DM Sans', sans-serif;
@@ -80,3 +86,18 @@
 #modal-signup-form {
     margin-top: 40px;
 }
+
+.form-errors {
+    color: lightpink;
+}
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+}
+/* #testyboy {
+    background: url('../navbar/ele.png') no-repeat;
+    width: 100%;    
+    height: 100%;
+    background-size: contain;
+    margin-top: 98px;
+} */
