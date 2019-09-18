@@ -1,0 +1,6 @@
+#add-tag-button {
+    background: url('./plus-button.png') no-repeat;
+    height: 300px;  
+    width:300px;
+    background-size: contain;
+}

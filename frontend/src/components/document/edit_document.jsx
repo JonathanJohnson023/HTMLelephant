@@ -18,13 +18,15 @@ class EditDocument extends React.Component {
     tags.push(tag);
     this.setState({tags});
   }
+
+  
   
   render(){
     // debugger
     return(
       <div id='edit-test'>
         <CreateTag addTag={this.addTag}/>
-          <div onClick={<EditTag/>}>
+          <div onClick={<EditTag />} >
             {this.state.tags.map((ele,i) => (
               <ParseHTML 
               tagObj={ele}
