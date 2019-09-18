@@ -20,14 +20,6 @@ class LoginForm extends React.Component {
         this.props.clearErrors();
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.currentUser === true) {
-    //         // this.props.history.push('/profile');
-    //     }
-
-    //     // this.setState({ errors: nextProps.errors })
-    // }
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
