@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './nav.css'
 
 export default ({ user, logout, openModal}) => {
@@ -7,12 +7,12 @@ export default ({ user, logout, openModal}) => {
   if (user) {
     display = {
             link1: <span >{user.username ? `Welcome, ${user.username}` : user.email }</span>,
-            link2: <a onClick={logout}>Logout</a>
+            link2: <p onClick={logout}>Logout</p>
     }
    } else{ 
      display = {
-         link1: <a className="btn" onClick={()=> openModal('signup')}>Signup</a>,
-         link2: <a className="btn" onClick={()=> openModal('login')}>Login</a>
+         link1: <p className="btn" onClick={()=> openModal('signup')}>Signup</p>,
+         link2: <p className="btn" onClick={()=> openModal('login')}>Login</p>
      }
     }
 

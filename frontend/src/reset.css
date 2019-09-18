@@ -3,3 +3,9 @@ body {
     margin: 0  ;
     padding: 0;
 }
+
+#edit-test {
+    top: 40%;
+    right: 45%;
+    position: absolute;
+}

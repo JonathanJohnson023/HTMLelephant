@@ -17,7 +17,15 @@ router.post('/',
 
         newDocument.save().then(document => res.json(document));
     }
+
 );
 
+router.get('/document', (req, res) => {
+    res.json({
+        id: req.document.id,
+        title: req.document.title,
+        tags: req.user.tags
+      });
+});
 
 module.exports = router;
