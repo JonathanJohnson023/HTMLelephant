@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user).then(() => {
-          if(this.props.errors.length > 0){
+            if(Object.values(this.props.errors).length > 0){
               return;
           } else {
             this.props.closeModal();
@@ -94,10 +94,7 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className='modal-form'
-                // onClick={this.props.closeModal}
-                >
-
+            <div className='modal-form'>
                 <form onSubmit={this.handleSubmit}>
                     <div className="modal-form-form" id='modal-login-form'>
                         <br />
@@ -113,8 +110,8 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input id='modal-button' type="submit" value="Submit" />
                         {this.renderErrors()}
+                        <input id='modal-button' type="submit" value="Submit" />
                     </div>
                 </form>
             </div>
