@@ -22,7 +22,6 @@ export default ({ user, logout, openModal}) => {
           <div id='nav-logo'>
             <div id='nav-logo-tag-1'></div>
             <div id='nav-logo-ele'></div>
-            <div id='nav-logo-tag-2'></div>
           </div>
         </div>
 
@@ -36,6 +35,8 @@ export default ({ user, logout, openModal}) => {
                 <li className="link2">{display.link2}</li>
               </ul>
             </div>
+            <div id='nav-logo-backslash'></div>
+            <div id='nav-logo-tag-2'></div>
           </div>
         </div>
       </div>
