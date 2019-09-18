@@ -94,7 +94,9 @@ class SignupForm extends React.Component {
             />
             <br />
             <input id='modal-button' type="submit" value="Submit" />
-            {this.renderErrors()}
+            <div className='form-errors'>
+              {this.renderErrors()}
+            </div>
           </div>
         </form>
       </div>
