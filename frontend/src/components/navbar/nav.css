@@ -1,6 +1,6 @@
 
 .navbar {
-    background: lightpink;
+    background: #ffb6c1;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -54,7 +54,7 @@
 
 .username-email li:hover{
     transition: all .15s ease-in-out;
-    color: cornflowerblue;
+    color: #6495ed;
     
 }
 
@@ -99,4 +99,8 @@
 
 #nav-logo-ele:hover {
    transform: rotate(32deg)
+}
+
+.btn{
+    margin: 0;
 }

@@ -1,4 +1,5 @@
 import * as DocumentAPIUtil from '../util/document_api_util';
+export const ADD_NEW_DOCUMENT = "ADD_NEW_DOCUMENT"
 
 export const addNewDocument = document => ({
     type: ADD_NEW_DOCUMENT,
