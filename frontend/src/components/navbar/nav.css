@@ -19,7 +19,7 @@
 
 
 .east-side {
-    margin-right: 40px;
+    margin-right: 5%;
 }
 
 .west-side {
@@ -27,16 +27,26 @@
     color: cornflowerblue
 }
 
+.the-righters {
+    display: flex;
+    align-items: center;
+}
+
+.user-stuff {
+    margin-right: 5%;
+}
+
 .username-email {
     list-style: none;
     display: flex;
     flex-direction: row;
+    padding: 0;
 }
 
 .username-email li{
     margin: 10px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
 }
 
@@ -58,6 +68,7 @@
     background-size: contain;
     transition: all .75s;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 #nav-logo-tag-1 {
@@ -65,6 +76,15 @@
     height: 66px;
     width: 60px;
     background-size: contain;
+    min-width: 60;
+}
+
+#nav-logo-backslash {
+    background: url('./backslash.png') no-repeat;
+    height: 80px;
+    width: 60px;
+    background-size: contain;
+    min-width: 60;
 }
 
 #nav-logo-tag-2 {
@@ -72,6 +92,7 @@
     height: 66px;
     width: 60px;
     background-size: contain;
+    min-width: 60;
 }
 
 #nav-logo-ele:hover {
