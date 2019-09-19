@@ -7,6 +7,30 @@
     top: 15%;
     left: 4%;
     z-index: 5;
+    transition: all .75s ease-in-out;
+}
+
+.open {
+    height: 75%;
+}
+
+.open li {
+    transition: all .35s;
+    opacity: 1;
+    border-bottom: 2px solid cornflowerblue;
+}
+ .open li:last-of-type {
+     border: none
+ }
+
+.closed {
+    height: 0px;
+}
+
+.closed li {
+    opacity: 0;
+    border-bottom: 2px solid cornflowerblue;
+    
 }
 
 #create-tag-list {
@@ -17,35 +41,46 @@
     text-align: center;
     list-style: none;
     background: lightpink;
-    height: 0px;
-    top: 50px;
-    position: relative;
     border-radius: 0px 0px 50px 50px;
     transition: all .75s ease-in-out;
-    z-index: 3;
+    width: 100px;
+    top: calc(15% + 50px);
+    position: absolute;
+    left: 4%;
 }
 
-#create-tag-list:hover {
-    height: 500px;
-}
 
 
-
-#add-tag-button:hover #create-tag-list {
-   height: 500px;
-}
+#add-tag-button:hover {
+   cursor: pointer;
+ }
 
 #create-tag-list li button{
     width: 100px;  
     border: none;   
     background: none;
-    color: cornflowerblue;
+    color: black;
     font-size: 18px;
     font-family: 'DM Sans', sans-serif;
+    
+}
 
+#create-tag-list li button:hover {
+    background: cornflowerblue;
+    transition: all .25s ease-in-out;
+    
+}
+
+#create-tag-list li button:focus {
+    outline:none;
+    
 }
 
 #create-tag-list li:first-of-type {
-    margin-top: 150px;
+    margin-top: 52px;
+}
+
+.turned{
+    transform: rotate(45deg)
 }
 
