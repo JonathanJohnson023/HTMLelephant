@@ -6,7 +6,7 @@ class CreateTag extends React.Component{
     this.state = { 
       type: "", 
       styles: [],
-      body: "",
+      body: "Test Testy",
     }
     this.handleClick = this.handleClick.bind(this);
     

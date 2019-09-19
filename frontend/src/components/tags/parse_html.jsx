@@ -9,6 +9,7 @@ class ParseHTML extends React.Component{
         editing: false
       }
       this.toggleEdit = this.toggleEdit.bind(this);
+      this.updateTag = this.updateTag.bind(this);
     }
   
   parseStyles = () => {
@@ -32,18 +33,25 @@ class ParseHTML extends React.Component{
         return null
     }
   }
+
+  updateTag(tagObj){
+    debugger
+    this.setState({tagObj})
+  }
   
   render() {
     let editTag;
     if(this.state.editing){
-      editTag = <EditTag />
+      editTag = <EditTag tagObj={this.state.tagObj} updateTag={this.updateTag}/>
     }else{
       editTag = ""
     }
     return (
       <div onClick={this.toggleEdit}>
         {this.renderTag()}
-        {editTag}
+        <div onClick={e => e.stopPropagation()}>
+          {editTag}
+        </div>
       </div>
     )
   } 
