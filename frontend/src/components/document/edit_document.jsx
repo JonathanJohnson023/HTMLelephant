@@ -9,6 +9,7 @@ class EditDocument extends React.Component {
     this.state = {
       title: "",
       tags: [],
+
     }
     this.addTag = this.addTag.bind(this);
   }
@@ -18,9 +19,8 @@ class EditDocument extends React.Component {
     tags.push(tag);
     this.setState({tags});
   }
-  
+
   render(){
-    
     return(
       <div id='edit-test'>
         <CreateTag addTag={this.addTag}/>

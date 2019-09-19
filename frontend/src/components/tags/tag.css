@@ -60,7 +60,7 @@
     border: none;   
     background: none;
     color: black;
-    font-size: 18px;
+    font-size: 24px;
     font-family: 'DM Sans', sans-serif;
     
 }
@@ -77,10 +77,44 @@
 }
 
 #create-tag-list li:first-of-type {
-    margin-top: 52px;
+    margin-top: 69px;
 }
 
 .turned{
     transform: rotate(45deg)
 }
 
+#edit-tag-form {
+    background: lightpink;
+    width: 80%;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+}
+
+#edit-tag-form form {
+    display: flex;
+    align-items: center;
+}
+.edit-tag-input{
+    margin: 5px;
+}
+
+#edit-form-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.edit-closed{
+    display:none;
+}
+
+.edit-open {
+    display: auto;
+}
