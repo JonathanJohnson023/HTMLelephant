@@ -10,7 +10,8 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = (dispatch) =>({ 
   openModal: modal => dispatch(openModal(modal)),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

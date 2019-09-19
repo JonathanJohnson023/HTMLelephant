@@ -6,7 +6,7 @@ export default ({ user, logout, openModal}) => {
   let display;
   if (user) {
     display = {
-            link1: <span >{user.username ? `Welcome, ${user.username}` : user.email }</span>,
+            link1: <span >{user.email}</span>,
             link2: <p onClick={logout}>Logout</p>
     }
    } else{ 
@@ -31,6 +31,7 @@ export default ({ user, logout, openModal}) => {
 
             <div className="user-stuff">
               <ul className="username-email">
+                {/* <li onClick={}></li> */}
                 <li className="link1">{display.link1}</li>
                 <li className="link2">{display.link2}</li>
               </ul>

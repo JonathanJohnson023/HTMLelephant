@@ -20,6 +20,12 @@ class EditDocument extends React.Component {
     this.setState({tags});
   }
 
+  componentDidUpdate(){
+    if(this.props.isAuthenticated === true){
+      console.log("you can save")
+    }
+  }
+
   render(){
     return(
       <div id='edit-test'>
