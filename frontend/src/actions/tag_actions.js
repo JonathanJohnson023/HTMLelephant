@@ -2,6 +2,7 @@ import * as TagAPIUtil from '../util/tag_api_util';
 export const RECEIVE_DOCUMENT_TAGS = "RECEIVE_DOCUMENT_TAGS"
 export const ADD_NEW_TAG = "ADD_NEW_TAG"
 export const RECEIVE_CURRENT_TAG = "RECEIVE_CURRENT_TAG"
+export const EDITING_TAG = "EDITING_TAG"
 
 export const receiveDocumentTags = tags => ({
     type: RECEIVE_DOCUMENT_TAGS,
@@ -17,6 +18,11 @@ export const currentTag = currentTag => ({
     type: RECEIVE_CURRENT_TAG,
     currentTag
 });
+
+export const editingTag = index => ({
+    type: EDITING_TAG,
+    index
+})
 
 export const fetchDocumentTags = id => dispatch => (
     TagAPIUtil.getDocumentTags(id)

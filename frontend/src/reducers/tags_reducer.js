@@ -1,4 +1,4 @@
-import { RECEIVE_DOCUMENT_TAGS, ADD_NEW_TAG, RECEIVE_CURRENT_TAG } from '../actions/tag_actions';
+import { RECEIVE_DOCUMENT_TAGS, ADD_NEW_TAG, RECEIVE_CURRENT_TAG  } from '../actions/tag_actions';
 
 const tagsReducer = (state = {}, action) => {
     Object.freeze(state);
