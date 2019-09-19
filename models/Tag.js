@@ -10,6 +10,10 @@ const TagSchema = new Schema({
     type: Array,
     required: true
   },
+  body: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
