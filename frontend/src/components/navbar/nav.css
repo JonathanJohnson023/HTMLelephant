@@ -8,6 +8,7 @@
     animation: .5s ease-out 0s 1 slideInFromTop;
     position: fixed;
     top: 0;
+    z-index: 99;
 }
 
 @keyframes slideInFromTop {
@@ -98,7 +99,7 @@
 }
 
 #nav-logo-ele:hover {
-   transform: rotate(32deg)
+   transform: rotate(25deg)
 }
 
 .btn{
