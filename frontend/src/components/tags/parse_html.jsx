@@ -11,7 +11,7 @@ class ParseHTML extends React.Component{
       this.defaultStyling = this.defaultStyling.bind(this);
       this.state.tagObj.styles = this.defaultStyling();
       this.updateTag = this.updateTag.bind(this);
-      this.handleChange = this.handleChange.bind(this);
+      this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
       this.handleFontChange = this.handleFontChange.bind(this);
     }
@@ -70,10 +70,9 @@ class ParseHTML extends React.Component{
 
   updateTag(tag){
     this.setState({tagObj: tag})
-    this.toggleEdit();
   }
   
-  handleChange = (color) => {
+  handleColorChange = (color) => {
     let newColor = this.state.tagObj.styles
     for (let i = 0; i < newColor.length; i++) {
       if (newColor[i][0] === "color") {
