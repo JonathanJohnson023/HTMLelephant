@@ -1,5 +1,5 @@
 import React from 'react';
-import { SketchPicker } from 'react-color';
+import { CirclePicker } from 'react-color';
 
 class EditTag extends React.Component {
     constructor(props) {
@@ -28,14 +28,16 @@ class EditTag extends React.Component {
       console.log('Howdy Partner!') 
     }
 
-    
+    componentDidUpdate(){
+      this.props.updateTag(this.state)
+    }    
 
     render() {
       return (
         <div id='edit-tag-form'>
           <form onSubmit={this.handleSubmit}>
             <div className="edit-tag-input">
-              <SketchPicker
+              <CirclePicker
                 color={this.state.styles.filter(ele => ele[0] === "color")[0][1]}
                 onChange={this.props.handleChange}
               />
