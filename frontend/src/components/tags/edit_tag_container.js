@@ -1,9 +1,8 @@
 import {connect} from 'react-redux';
-import EditTag from './create_tag'
+import EditTag from './edit_tag'
 import { createTag } from '../../actions/tag_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentUser: state.session.user,
     document: state.entities.document,
