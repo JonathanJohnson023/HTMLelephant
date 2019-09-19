@@ -13,6 +13,7 @@ class ParseHTML extends React.Component{
       this.updateTag = this.updateTag.bind(this);
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
+      this.handleFontChange = this.handleFontChange.bind(this);
     }
 
     // componentDidMount(){
@@ -26,7 +27,6 @@ class ParseHTML extends React.Component{
     // }
     
     componentDidUpdate(){
-      debugger
       if(this.state.editing && this.props.editing != this.props.index){
         this.setState({editing: false})
       }
@@ -81,11 +81,27 @@ class ParseHTML extends React.Component{
     }
     this.setState({ [this.state.tagObj.styles]: newColor });
   };
+
+  handleFontChange = e => {
+    let newFont = this.state.tagObj.styles
+    for (let i = 0; i < newFont.length; i++) {
+      if (newFont[i][0] === "fontFamily") {
+        newFont[i][1] = e.target.value;
+      }
+    }
+
+    this.setState({ [this.state.tagObj.styles]: newFont });
+  }
   
   render() {
     let editTag;
     if(this.state.editing){
-      editTag = <EditTag tagObj={this.state.tagObj} updateTag={this.updateTag} handleChange={this.handleColorChange}/>
+      editTag = <EditTag 
+        tagObj={this.state.tagObj} 
+        updateTag={this.updateTag} 
+        handleChange={this.handleChange}
+        handleFontChange={this.handleFontChange}
+      />
     }else{
       editTag = ""
     }
