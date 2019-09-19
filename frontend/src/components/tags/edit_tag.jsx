@@ -28,8 +28,6 @@ class EditTag extends React.Component {
       console.log('Howdy Partner!') 
     }
 
-    
-
     render() {
       return (
         <div id='edit-tag-form'>
@@ -49,7 +47,7 @@ class EditTag extends React.Component {
             </div>
             <div  className='edit-tag-input'>
               <div action="">
-                <select name="fonts" id="">
+                <select name="fonts" id="" onChange={this.props.handleFontChange}>
                   <option value="Times New Roman">Times New Roman</option>
                   <option value="sans-serif">Sans-serif</option>
                   <option value="Verdana">Verdana</option>
