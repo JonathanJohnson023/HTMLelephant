@@ -34,7 +34,8 @@ router.post('/',
     (req, res) => {
         const newTag = new Tag({
             type: req.body.type,
-            style: req.body.style,
+            styles: req.body.styles,
+            body: req.body.body,
             document: req.document.id
           });
 
