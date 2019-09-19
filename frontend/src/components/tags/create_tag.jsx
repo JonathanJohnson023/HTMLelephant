@@ -6,7 +6,7 @@ class CreateTag extends React.Component{
     this.state = { 
       type: "", 
       styles: [],
-      body: "Test Testy",
+      body: "",
     }
     this.handleClick = this.handleClick.bind(this);
     
@@ -17,6 +17,7 @@ class CreateTag extends React.Component{
 
   handleClick(e){
     e.preventDefault();
+
     this.setState({ type: e.target.value}, () => this.props.addTag(this.state));
   };
 
@@ -40,8 +41,8 @@ class CreateTag extends React.Component{
         <div id='dropdown-time'>
           <div id='add-tag-button' onClick={this.pushButton}></div>
           <ul id='create-tag-list' className='closed'>
-              <li><button value="p" onClick={(e) => this.handleClick(e)}>Create p</button></li>
-              <li><button value="h1" onClick={(e) => this.handleClick(e)}>Create h1</button></li>
+              <li><button value="p" onClick={(e) => this.handleClick(e)}>Add Text</button></li>
+              <li><button value="h1" onClick={(e) => this.handleClick(e)}>Add Header</button></li>
           </ul>
           
         </div>
