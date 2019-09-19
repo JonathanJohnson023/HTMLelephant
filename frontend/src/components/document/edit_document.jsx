@@ -29,6 +29,9 @@ class EditDocument extends React.Component {
               <ParseHTML 
               tagObj={ele}
               key={i}
+              index={i}
+              editingTag={this.props.editingTag}
+              editing={this.props.editing}
               />
             ))}
           </div>

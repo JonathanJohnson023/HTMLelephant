@@ -13,9 +13,25 @@ class ParseHTML extends React.Component{
       this.updateTag = this.updateTag.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
-
     }
-  
+
+    // componentDidMount(){
+    //   const tag = document.getElementById(`${this.props.index}`)
+    //   tag.addEventListener("click", (event) => {
+    //     debugger
+    //     if(event.currentTarget.id != this.props.index){
+    //       this.setState({editing: false})
+    //     }
+    //   })
+    // }
+    
+    componentDidUpdate(){
+      debugger
+      if(this.state.editing && this.props.editing != this.props.index){
+        this.setState({editing: false})
+      }
+    }
+
   parseStyles = () => {
     let styles = {};
     this.state.tagObj.styles.forEach(ele => styles[ele[0]] = ele[1]);
@@ -24,15 +40,7 @@ class ParseHTML extends React.Component{
   
   toggleEdit() {
     this.setState({ editing: !this.state.editing })
-    let container = document.getElementById('edit-form-container')
-    if (container.classList.value === 'edit-open') {
-      container.classList.remove('edit-open')
-      container.classList.add('edit-closed')
-    }
-    else {
-      container.classList.add('edit-open')
-      container.classList.remove('edit-closed')
-    }
+    this.props.editingTag(this.props.index)
   }
 
   defaultStyling() {
@@ -62,7 +70,7 @@ class ParseHTML extends React.Component{
 
   updateTag(tag){
     this.setState({tagObj: tag})
-    this.props.toggleEdit();
+    this.toggleEdit();
   }
   
   handleChange = (color) => {
@@ -83,14 +91,10 @@ class ParseHTML extends React.Component{
       editTag = ""
     }
     return (
-      <div>
-          <div className="on-click-listiner" onClick={this.toggleEdit}>
-            {this.renderTag()}
-          </div>
-        <div id="edit-form-container" className='edit-closed' onClick={this.toggleEdit}>
-          <div className="stop-propy-boy" onClick={e => e.stopPropagation()}>
-            {editTag}
-          </div>
+      <div id={this.props.index} onClick={this.toggleEdit}>
+          {this.renderTag()}
+        <div onClick={e => e.stopPropagation()}>
+          {editTag}
         </div>
       </div>
     )
