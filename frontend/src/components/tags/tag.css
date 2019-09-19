@@ -1,6 +1,51 @@
 #add-tag-button {
     background: url('./plus-button.png') no-repeat;
-    height: 300px;  
-    width:300px;
+    height: 100px;  
+    width:100px;
     background-size: contain;
+    position: absolute;
+    top: 15%;
+    left: 4%;
+    z-index: 5;
 }
+
+#create-tag-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    background: lightpink;
+    height: 0px;
+    top: 50px;
+    position: relative;
+    border-radius: 0px 0px 50px 50px;
+    transition: all .75s ease-in-out;
+    z-index: 3;
+}
+
+#create-tag-list:hover {
+    height: 500px;
+}
+
+
+
+#add-tag-button:hover #create-tag-list {
+   height: 500px;
+}
+
+#create-tag-list li button{
+    width: 100px;  
+    border: none;   
+    background: none;
+    color: cornflowerblue;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+
+}
+
+#create-tag-list li:first-of-type {
+    margin-top: 150px;
+}
+
