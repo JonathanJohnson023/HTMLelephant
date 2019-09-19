@@ -1,13 +1,14 @@
 #add-tag-button {
     background: url('./plus-button.png') no-repeat;
-    height: 100px;  
-    width:100px;
+    height: 100px;
+    width: 100px;
     background-size: contain;
     position: absolute;
-    top: 15%;
+    margin-top: calc(6% + 50px);
     left: 4%;
     z-index: 5;
     transition: all .75s ease-in-out;
+    top: 0;
 }
 
 .open {
@@ -44,9 +45,10 @@
     border-radius: 0px 0px 50px 50px;
     transition: all .75s ease-in-out;
     width: 100px;
-    top: calc(15% + 50px);
+    margin-top: calc(6% + 100px);
     position: absolute;
     left: 4%;
+    top: 0;
 }
 
 
@@ -85,16 +87,26 @@
 }
 
 #edit-tag-form {
-    background: lightpink;
-    width: 80%;
-    margin: 10%;
+    background: cornflowerblue;
+    width: calc(8% + 100px);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    position: absolute;
+    left: 0;
+    z-index: 50;
+    margin-top: calc(6% + 50px);
+    top: 0;
+    height: 80%;
+    animation: .5s ease-out 0s 1 slideInFromRight;
 }
 
 #edit-tag-form form {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: end;
 }
 .edit-tag-input{
     margin: 5px;
@@ -109,6 +121,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+  
 }
 
 .edit-closed{
@@ -118,3 +131,12 @@
 .edit-open {
     display: auto;
 }
+
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

@@ -26,7 +26,6 @@ class ParseHTML extends React.Component{
     // }
     
     componentDidUpdate(){
-      debugger
       if(this.state.editing && this.props.editing != this.props.index){
         this.setState({editing: false})
       }
