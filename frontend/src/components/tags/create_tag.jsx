@@ -24,8 +24,8 @@ class CreateTag extends React.Component{
       return (
         <div id='add-tag-button'>
             <ul id='create-tag-list'>
-                <button value="p" onClick={(e) => this.handleClick(e)}>Create p</button>
-                <button value="h1" onClick={(e) => this.handleClick(e)}>Create h1</button>
+              <li><button value="p" onClick={(e) => this.handleClick(e)}>Create p</button></li>
+              <li><button value="h1" onClick={(e) => this.handleClick(e)}>Create h1</button></li>
             </ul>
         </div>
       )
