@@ -1,8 +1,8 @@
 import React from 'react';
 import CreateTag from '../tags/create_tag_container';
-import EditTag from "../tags/edit_tag_container"
 import ParseHTML from '../tags/parse_html'
 import './document.css'
+import EditTag from '../tags/edit_tag_container';
 class EditDocument extends React.Component {
   constructor(props){
     super(props)
@@ -18,15 +18,13 @@ class EditDocument extends React.Component {
     tags.push(tag);
     this.setState({tags});
   }
-
-  
   
   render(){
-    // debugger
+    
     return(
       <div id='edit-test'>
         <CreateTag addTag={this.addTag}/>
-          <div onClick={<EditTag />} >
+          <div> 
             {this.state.tags.map((ele,i) => (
               <ParseHTML 
               tagObj={ele}
@@ -34,8 +32,8 @@ class EditDocument extends React.Component {
               />
             ))}
           </div>
-          <h1>Hello From Edit</h1>
-          <p>this is a little subtitle</p>
+          {/* <h1>Hello From Edit</h1>
+          <p>this is a little subtitle</p> */}
       </div>
     )
   }

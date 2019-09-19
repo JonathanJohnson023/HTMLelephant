@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
-import CreateTag from './create_tag'
+import EditTag from './create_tag'
 import { createTag } from '../../actions/tag_actions';
 
 const mapStateToProps = state => {
+  debugger
   return {
     currentUser: state.session.user,
     document: state.entities.document,
-    tag: state.ui.selectedTag
   };
 };
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateTag);
+export default connect(mapStateToProps, mapDispatchToProps)(EditTag);
