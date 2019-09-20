@@ -99,7 +99,7 @@ class ParseHTML extends React.Component{
       editTag = <EditTag 
         tagObj={this.state.tagObj} 
         updateTag={this.updateTag} 
-        handleChange={this.handleChange}
+        handleChange={this.handleColorChange}
         handleFontChange={this.handleFontChange}
       />
     }else{
