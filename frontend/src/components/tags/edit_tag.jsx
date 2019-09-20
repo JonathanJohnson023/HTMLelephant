@@ -17,7 +17,7 @@ class EditTag extends React.Component {
       return (e) => {
           this.setState({ [theType]: e.target.value });
       };
-    }    
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -45,6 +45,11 @@ class EditTag extends React.Component {
               />
             </div>
             <div className='edit-tag-input'>
+              <select name="text-align">
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+              </select>
               <input
                 type="text"
                 value={this.state.body}
