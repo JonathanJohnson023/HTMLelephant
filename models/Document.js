@@ -6,10 +6,6 @@ const DocumentSchema = new Schema({
     type: String,
     required: true
   },
-  tags: {
-    type: Schema.Types.ObjectId,
-    ref: 'tags'
-  },
   date: {
     type: Date,
     default: Date.now

@@ -1,6 +1,6 @@
-import { RECEIVE_DOCUMENT_TAGS, ADD_NEW_TAG, RECEIVE_CURRENT_TAG  } from '../actions/tag_actions';
+import { RECEIVE_DOCUMENT_TAGS, ADD_NEW_TAG, RECEIVE_CURRENT_TAG, RECEIVE_TAGS } from '../actions/tag_actions';
 
-const tagsReducer = (state = {}, action) => {
+const tagsReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
@@ -11,6 +11,8 @@ const tagsReducer = (state = {}, action) => {
             return Object.assign({}, state, {})
         case RECEIVE_CURRENT_TAG:
             return action.currentTag
+        case RECEIVE_TAGS:
+            return action.data.slice()
         default:
             return state;
     }
