@@ -28,3 +28,11 @@ body {
 button:focus {
     border: none;
 }
+
+#download-button {
+	position: absolute;
+	bottom: 30px;
+	width: 3%;
+	font-size: 8px;
+	text-align: left;
+}

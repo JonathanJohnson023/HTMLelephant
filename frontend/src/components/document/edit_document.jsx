@@ -3,6 +3,7 @@ import CreateTag from '../tags/create_tag_container';
 import ParseHTML from '../tags/parse_html'
 import './document.css'
 import EditTag from '../tags/edit_tag_container';
+const download = require("downloadjs")
 class EditDocument extends React.Component {
   constructor(props){
     super(props)
@@ -26,6 +27,11 @@ class EditDocument extends React.Component {
     }
   }
 
+  htmlDownload() {
+    let doc = document.getElementById('hello-there')
+    download(doc.innerHTML, "YourElephant.html", "text/html" )
+  }
+
   render(){
     return(
       <div id='edit-test'>
@@ -41,6 +47,7 @@ class EditDocument extends React.Component {
               />
             ))}
           </div>
+          <button id='download-button' onClick={this.htmlDownload}>Download Your HTML File</button>
           {/* <h1>Hello From Edit</h1>
           <p>this is a little subtitle</p> */}
       </div>
