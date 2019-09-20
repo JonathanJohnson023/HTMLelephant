@@ -14,6 +14,7 @@ class ParseHTML extends React.Component{
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
       this.handleFontChange = this.handleFontChange.bind(this);
+      this.handleFontSizeChange = this.handleFontSizeChange.bind(this);
     }
 
     // componentDidMount(){
@@ -92,6 +93,18 @@ class ParseHTML extends React.Component{
 
     this.setState({ [this.state.tagObj.styles]: newFont });
   }
+
+  handleFontSizeChange = e => {
+    let newFontSize = this.state.tagObj.styles
+    for (let i = 0; i < newFontSize.length; i++) {
+      if (newFontSize[i][0] === "fontSize") {
+        newFontSize[i][1] = e.target.value;
+      }
+    }
+
+    this.setState({ [this.state.tagObj.styles]: newFontSize });
+    // debugger
+  }
   
   render() {
     let editTag;
@@ -101,6 +114,7 @@ class ParseHTML extends React.Component{
         updateTag={this.updateTag} 
         handleChange={this.handleColorChange}
         handleFontChange={this.handleFontChange}
+        handleFontSizeChange={this.handleFontSizeChange}
       />
     }else{
       editTag = ""
