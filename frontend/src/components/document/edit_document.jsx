@@ -58,7 +58,7 @@ class EditDocument extends React.Component {
               />
             ))}
           </div>
-          <button id='download-button' onClick={this.htmlDownload}>Download Your HTML File</button>
+          <button id='download-button' onClick={this.htmlDownload}></button>
           {/* <h1>Hello From Edit</h1>
           <p>this is a little subtitle</p> */}
       </div>
