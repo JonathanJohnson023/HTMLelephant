@@ -100,13 +100,19 @@
     height: 80%;
     animation: .5s ease-out 0s 1 slideInFromRight;
 }
+#edit-tag-h1 {
+    width: 200px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    background: lightpink;
+}
 
 #edit-tag-form form {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 5px;
     justify-content: end;
+    width: 100%;
 }
 .edit-tag-input{
     margin: 5px;
@@ -130,6 +136,29 @@
 
 .edit-open {
     display: auto;
+}
+
+#color-picker {
+    transition: all .5s ease-in-out;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+}
+
+
+#color-picker:hover {
+    background: rgba(239, 247, 255, 1)
+
+}
+
+.circle-picker {
+    justify-content: center;
+    width: 252px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -14px;
+    margin-bottom: -14px;
 }
 
 @keyframes slideInFromRight {

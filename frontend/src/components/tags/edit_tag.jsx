@@ -37,27 +37,30 @@ class EditTag extends React.Component {
       return (
         <div id='edit-tag-form'>
           <form onSubmit={this.handleSubmit}>
-            <div className="edit-tag-input">
+            <h1 id='edit-tag-h1'>Text Editor</h1>
+            <div id='color-picker' className="edit-tag-input">
               <CirclePicker
                 color={this.state.styles.filter(ele => ele[0] === "color")[0][1]}
                 onChange={this.props.handleChange}
               />
             </div>
             <div className='edit-tag-input'>
-              <select name="text-align">
+            Text Align:  <select name="text-align">
                 <option value="left">Left</option>
                 <option value="center">Center</option>
                 <option value="right">Right</option>
               </select>
-              <input
-                type="text"
+              <br></br>
+              Body: <input
+                type="textarea"
+                placeholder='Add Your Text Here'
                 value={this.state.body}
                 onChange={this.update("body")}
               />
             </div>
             <div  className='edit-tag-input'>
               <div action="">
-                <select name="fonts" id="" onChange={this.props.handleFontChange}>
+                Font: <select name="fonts" id="" onChange={this.props.handleFontChange}>
                   <option value="Times New Roman">Times New Roman</option>
                   <option value="sans-serif">Sans-serif</option>
                   <option value="Verdana">Verdana</option>
