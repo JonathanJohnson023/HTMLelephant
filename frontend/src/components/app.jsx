@@ -16,6 +16,7 @@ const App = () => (
     <div id='testyboy'></div>
     <Switch>
       <Route exact path="/" component={EditDocumentContainer} /> 
+      <Route exact path="/edit/:id" component={EditDocumentContainer} /> 
     </Switch> 
   </div>
 );

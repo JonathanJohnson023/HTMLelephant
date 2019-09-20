@@ -30,11 +30,22 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user).then(() => {
-            if(Object.values(this.props.errors).length > 0){
-              return;
-          } else {
-            this.props.closeModal();
-          }
+            if(!Object.values(this.props.errors).length > 0){
+                if(this.props.document && this.props.tags){
+                    this.props.createDocument({title: this.props.document.title})
+                        .then(payload => {
+                            const docId = payload.document._id
+                                const tags = this.props.tags.map((tag) => {
+                                    tag.documentId = docId
+                                    return tag
+                                })
+                            this.props.saveTagCollection(tags).then(() => {
+                                this.props.history.push(`/edit/${docId}`)
+                            })
+                        })
+                }
+                this.props.closeModal();
+          } 
         })
     }
 

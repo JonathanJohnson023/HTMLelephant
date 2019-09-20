@@ -3,6 +3,7 @@ export const RECEIVE_DOCUMENT_TAGS = "RECEIVE_DOCUMENT_TAGS"
 export const ADD_NEW_TAG = "ADD_NEW_TAG"
 export const RECEIVE_CURRENT_TAG = "RECEIVE_CURRENT_TAG"
 export const EDITING_TAG = "EDITING_TAG"
+export const RECEIVE_TAGS = "RECEIVE_TAGS"
 
 export const receiveDocumentTags = tags => ({
     type: RECEIVE_DOCUMENT_TAGS,
@@ -26,7 +27,7 @@ export const editingTag = index => ({
 
 export const fetchDocumentTags = id => dispatch => (
     TagAPIUtil.getDocumentTags(id)
-    .then(tags => dispatch(receiveDocumentTags(tags)))
+    .then(tags => dispatch(receiveDocumentTags(tags.data)))
     .catch(err => console.log(err))
 );
 
@@ -45,3 +46,7 @@ export const saveTagCollection = data => dispatch => (
      .catch(err => console.log(err))
 );
 
+export const addTags = data => ({
+    type: RECEIVE_TAGS,
+    data
+});
