@@ -6,6 +6,7 @@
     margin-left: calc(8% + 100px);
     overflow: scroll;
     margin-bottom: 1%;
+    z-index: 51;
 }
 
 #hello-there dl, dt, dd, ol, ul, li,
