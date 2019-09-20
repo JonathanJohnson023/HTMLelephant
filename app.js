@@ -10,7 +10,7 @@ const tags = require("./routes/api/tags")
 const document = require("./routes/api/document")
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected successfully"))
     .catch(error => console.log(error));
 

@@ -6,8 +6,10 @@ export const addNewDocument = document => ({
     document
 });
 
-export const createDocument = data => dispatch => (
+export const createDocument = data => dispatch => {
+    return(
     DocumentAPIUtil.createDocument(data)
     .then(doc => dispatch(addNewDocument(doc)))
     .catch(err => console.log(err))
-);
+    )
+};

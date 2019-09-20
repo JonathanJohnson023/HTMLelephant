@@ -18,7 +18,7 @@ router.get('/document/:document_id', (req, res) => {
         })
         .sort({date: -1})
         .then(tags => res.json(tags))
-        .catch(err => res.status(404).json({notagsfound: 'No tags found from that user'}));
+        .catch(err => res.status(404).json({notagsfound: 'No tags found'}));
 });
 
 router.get('/:id', (req, res) => {
@@ -42,5 +42,26 @@ router.post('/',
         newTag.save().then(tag => res.json(tag));
     }
 );
+
+  router.post('/collection',
+    passport.authenticate('jwt', {
+        session: false
+    }),
+      (req, res) => {
+        Tag.collection.insert(req.body)
+          .then(tag => res.json(tag.ops))
+          .catch(err => {
+            res.status(404).json(err)
+          })
+        // const newTag = new Tag({
+        //     type: req.body.type,
+        //     styles: req.body.styles,
+        //     body: req.body.body,
+        //     });
+ 
+        // newTag.save().then(tag => res.json(tag));
+      }
+  );
+
 
 module.exports = router;

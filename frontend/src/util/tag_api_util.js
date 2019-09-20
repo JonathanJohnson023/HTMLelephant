@@ -8,3 +8,7 @@ export const getDocumentTags = document_id => {
 export const addTag = data => {
     return axios.post('/api/tags', data)
 };
+
+export const saveTagCollection = data => {
+    return axios.post('/api/tags/collection', data)
+}

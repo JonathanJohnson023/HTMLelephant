@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import './nav.css'
 
-export default ({ user, logout, openModal}) => {
+export default ({ user, logout, openModal, createDocument}) => {
   let display;
   if (user) {
     display = {
@@ -31,7 +31,7 @@ export default ({ user, logout, openModal}) => {
 
             <div className="user-stuff">
               <ul className="username-email">
-                {/* <li onClick={}></li> */}
+                {/* <li onClick={() => createDocument({title: "title", tags: []})}>Hello there save Doc</li> */}
                 <li className="link1">{display.link1}</li>
                 <li className="link2">{display.link2}</li>
               </ul>
