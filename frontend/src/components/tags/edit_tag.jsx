@@ -31,8 +31,7 @@ class EditTag extends React.Component {
 
     componentDidUpdate(){
       this.props.updateTag(this.state)
-    }    
-
+    } 
 
     render() {
       return (
@@ -82,10 +81,10 @@ class EditTag extends React.Component {
               className="slider"
               name="slider"
               id="font-size-slider"
-              onChange={this.sliderWork}
+              onChange={this.props.handleFontSizeChange}
             />
             <small>
-              {this.state.styles.filter(ele => ele[0] === "fontSize")[0][1]}
+              {this.props.tagObj.styles.filter(ele => ele[0] === "fontSize")[0][1]}
             </small>
             {/* styles = [["font-family", "sans"], ["font-size", "20px"],
                 ["color", "red"]] */}
