@@ -36,7 +36,7 @@ router.post('/',
             type: req.body.type,
             styles: req.body.styles,
             body: req.body.body,
-            document: req.document.id
+            document: req.body.documentId
           });
 
         newTag.save().then(tag => res.json(tag));
@@ -53,13 +53,6 @@ router.post('/',
           .catch(err => {
             res.status(404).json(err)
           })
-        // const newTag = new Tag({
-        //     type: req.body.type,
-        //     styles: req.body.styles,
-        //     body: req.body.body,
-        //     });
- 
-        // newTag.save().then(tag => res.json(tag));
       }
   );
 

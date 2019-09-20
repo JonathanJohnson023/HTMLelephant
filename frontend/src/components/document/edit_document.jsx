@@ -8,33 +8,53 @@ class EditDocument extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      title: "",
-      tags: [],
-
+      title: "Help",
+      tags: this.props.tags,
     }
     this.addTag = this.addTag.bind(this);
     this.saveProgress = this.saveProgress.bind(this);
   }
 
+  componentDidMount(){
+    const documentId = this.props.match.params.id
+    if(documentId){
+      this.props.fetchDocument(documentId).then(doc => {
+        this.props.fetchDocumentTags(documentId).then(payload => {
+          this.setState({tags: Object.values(payload.tags)})
+        })
+      })
+    }
+  }
+
   addTag(tag){
-    const tags = this.state.tags
+    const tags = this.state.tags.slice()
     tags.push(tag);
     this.setState({tags});
   }
 
-  componentDidUpdate(){
-    if(this.props.isAuthenticated === true){
-      console.log("you can save")
-    }
-  }
 
   saveProgress(){
-    this.props.saveTagCollection(this.state.tags)
-      .then(res => {
-        return( 
-        this.props.createDocument({title: "title", tags: res.tags})
-      )
-    })
+    if(this.props.isAuthenticated === true){
+      if(this.props.document === undefined){
+        this.props.createDocument({title: this.state.title})
+          .then(payload => {
+            const docId = payload.document._id
+            const tags = this.state.tags.map((tag) => {
+              tag.documentId = docId
+              return tag
+            })
+             this.props.saveTagCollection(tags).then(() => {
+              this.props.history.push(`/edit/${docId}`)
+              })
+          })
+      } else {
+        this.props.editDocument({id: this.props.document._id, title: this.state.title })
+      }
+    } else {
+      this.props.addTags(this.state.tags)
+      this.props.addNewDocument({title: this.state.title})
+      this.props.openModal("login")
+    }
   }
 
   htmlDownload() {
