@@ -43,7 +43,7 @@ class ParseHTML extends React.Component{
     this.setState({ editing: !this.state.editing })
     this.props.editingTag(this.props.index)
   }
-
+  
   defaultStyling() {
     switch (this.state.tagObj.type) {
       case "p":

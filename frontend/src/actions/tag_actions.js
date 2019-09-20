@@ -36,3 +36,12 @@ export const createTag = data => dispatch => (
     .catch(err => console.log(err))
 );
 
+export const saveTagCollection = data => dispatch => (
+    TagAPIUtil.saveTagCollection(data)
+     .then(tags => {
+         return (
+         dispatch(receiveDocumentTags(tags.data)))
+     })
+     .catch(err => console.log(err))
+);
+
