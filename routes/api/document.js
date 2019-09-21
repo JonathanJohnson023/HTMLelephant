@@ -26,7 +26,7 @@ router.get('/:documentId', (req, res) => {
 });
 
 router.patch('/:documentId', (req, res) =>{
-    Document.findOneAndUpdate({id: req.params.documentId}, req.body)
+    Document.findByIdAndUpdate(req.params.documentId, req.body)
         .then(document => {
             res.json(document)
         })

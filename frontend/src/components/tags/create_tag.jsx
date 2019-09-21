@@ -17,7 +17,7 @@ class CreateTag extends React.Component{
 
   handleClick(e){
     e.preventDefault();
-
+      
     this.setState({ type: e.target.value}, () => this.props.addTag(this.state));
   };
 
