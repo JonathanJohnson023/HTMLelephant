@@ -8,8 +8,6 @@ class ParseHTML extends React.Component{
         tagObj: this.props.tagObj,
         editing: false
       };
-      this.defaultStyling = this.defaultStyling.bind(this);
-      this.state.tagObj.styles = this.defaultStyling();
       this.updateTag = this.updateTag.bind(this);
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
@@ -42,17 +40,6 @@ class ParseHTML extends React.Component{
   toggleEdit() {
     this.setState({ editing: !this.state.editing })
     this.props.editingTag(this.props.index)
-  }
-  
-  defaultStyling() {
-    switch (this.state.tagObj.type) {
-      case "p":
-        return [["fontSize", "21px"], ["color", "purple"], ["fontFamily", "none"]];
-      case "h1":
-        return [["fontSize", "55px"], ["color", "lightpink"],["fontFamily", "none"]];
-      default:
-        return [];
-    }
   }
   
   renderTag = () => {

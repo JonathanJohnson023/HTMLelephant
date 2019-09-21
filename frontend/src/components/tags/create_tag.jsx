@@ -9,15 +9,27 @@ class CreateTag extends React.Component{
       body: "",
     }
     this.handleClick = this.handleClick.bind(this);
-    
+    this.defaultStyling = this.defaultStyling.bind(this);
   }  
   // ["color", "red"], ["fontSize", "40px"]
   // "<p style=style></p>"
     // style = {{ backgroundImage: `url(${this.props.user.coverPhoto})` }}
 
+    defaultStyling(type) {
+      switch (type) {
+        case "p":
+          return [["fontSize", "21px"], ["color", "purple"], ["fontFamily", "none"]];
+        case "h1":
+          return [["fontSize", "55px"], ["color", "lightpink"],["fontFamily", "none"]];
+        default:
+          return [];
+      }
+    }
+
   handleClick(e){
     e.preventDefault();
-      
+    let defaultStyles = this.defaultStyling(e.target.value)
+    this.setState({ styles: defaultStyles})
     this.setState({ type: e.target.value}, () => this.props.addTag(this.state));
   };
 
