@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './nav.css'
 
 export default ({ user, logout, openModal, createDocument}) => {
@@ -21,7 +21,7 @@ export default ({ user, logout, openModal, createDocument}) => {
         <div className="west-side">
           <div id='nav-logo'>
             <div id='nav-logo-tag-1'></div>
-            <div id='nav-logo-ele'></div>
+            <Link to="/"><div id='nav-logo-ele'></div></Link>
           </div>
         </div>
 

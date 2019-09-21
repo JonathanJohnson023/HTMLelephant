@@ -41,7 +41,8 @@ button:focus {
     transition: all .75s ease-in-out;
     bottom: 0;
 	margin-bottom: 2%;
-	border:none;
+    border:none;
+    cursor: pointer;
 }
 
 .link2 p {

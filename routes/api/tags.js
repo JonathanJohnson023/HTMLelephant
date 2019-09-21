@@ -14,10 +14,14 @@ const Tag = require("../../models/Tag")
 
 router.get('/document/:document_id', (req, res) => {
     Tag.find({
-            tag: req.params.tag_id
+        documentId: req.params.document_id
         })
         .sort({date: -1})
-        .then(tags => res.json(tags))
+        .then(tags => { 
+          return (
+            res.json(tags)
+          )
+      })
         .catch(err => res.status(404).json({notagsfound: 'No tags found'}));
 });
 
@@ -48,7 +52,7 @@ router.post('/',
         session: false
     }),
       (req, res) => {
-        Tag.collection.insert(req.body)
+        Tag.collection.insertMany(req.body)
           .then(tag => res.json(tag.ops))
           .catch(err => {
             res.status(404).json(err)
