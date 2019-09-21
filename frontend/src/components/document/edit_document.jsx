@@ -58,7 +58,6 @@ class EditDocument extends React.Component {
         this.props.saveTagCollection(tags).then((payload) => {
             this.setState({tags: this.props.tags})
           })
-          debugger
       }
     } else {
       this.props.addTags(this.state.tags)
