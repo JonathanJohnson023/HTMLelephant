@@ -41,9 +41,26 @@ button:focus {
     transition: all .75s ease-in-out;
     bottom: 0;
 	margin-bottom: 2%;
-	border:none;
+    border:none;
+    cursor: pointer
 }
 
 .link2 p {
 	margin: 0;
+}
+
+
+#save-button {
+    background: url(./save-button.png) no-repeat;
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    position: absolute;
+    left: 4%;
+    z-index: 5;
+    transition: all .75s ease-in-out;
+    bottom: 0;
+	margin-bottom: calc(2% + 120px);
+    border:none;
+    cursor: pointer;
 }

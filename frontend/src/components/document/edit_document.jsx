@@ -67,7 +67,7 @@ class EditDocument extends React.Component {
       <div id='edit-test'>
         <CreateTag addTag={this.addTag}/>
           <div id='hello-there'> 
-          <button onClick={this.saveProgress}>createDocument Duhh</button>
+          <button id='save-button' onClick={this.saveProgress}></button>
             {this.state.tags.map((ele,i) => (
               <ParseHTML 
               tagObj={ele}
