@@ -90,6 +90,7 @@ class ParseHTML extends React.Component{
       }
     }  
     this.setState({ [this.state.tagObj.styles]: newFontSize });
+    return newFontSize
   }
   
   render() {

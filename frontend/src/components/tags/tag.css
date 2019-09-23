@@ -97,7 +97,7 @@
     z-index: 50;
     margin-top: calc(6% + 50px);
     top: 0;
-    height: 82%;
+    height: calc(84% + 5px);
     animation: .5s ease-out 0s 1 slideInFromRight;
 }
 #edit-tag-h1 {
@@ -116,6 +116,17 @@
 }
 .edit-tag-input{
     margin: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    flex-wrap: wrap;
+}
+
+.edit-tag-input p{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    margin: 5px 5px 5px 15px;
 }
 
 #edit-form-container {
@@ -160,6 +171,50 @@
     margin-right: -14px;
     margin-bottom: -14px;
 }
+
+
+
+#text-align-dropdown select{
+    position: relative;
+    width: 40%;
+    font-family: cursive;
+    background: lightpink;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+}
+
+#font-dropdown {
+    font-family: cursive;
+    background: lightpink;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+}
+
+#tag-textarea {
+    background: lightpink;
+    height: 100px;
+    border: none;
+    border-radius: 6px;
+    font-family: sans-serif;
+    color: black;
+    font-size: 16px;
+    width: 80%;
+}
+
+#delete-button {
+    font-size: 18px;
+    background: lightpink;
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+#delete-button:hover {
+    background: rgb(192, 124, 134);
+    transition: all .5s ease-in-out;
+}
+
+
 
 @keyframes slideInFromRight {
     0% {
