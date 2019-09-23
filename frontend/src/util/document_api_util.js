@@ -5,7 +5,6 @@ export const createDocument = (data) => {
 };
 
 export const editDocument = (data) => {
-  debugger
   return axios.patch(`/api/documents/${data.id}`, data)
 }
 

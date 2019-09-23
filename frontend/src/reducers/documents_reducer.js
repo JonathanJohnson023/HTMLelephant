@@ -8,7 +8,6 @@ const documentsReducer = (state = {}, action) => {
         case ADD_NEW_DOCUMENT:
             return action.document
         case EDIT_DOCUMENT: 
-            debugger
             let newState = Object.assign({}, state);
             // newState[action.document.id] = action.document
             return newState

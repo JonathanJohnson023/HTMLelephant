@@ -80,7 +80,7 @@ class EditTag extends React.Component {
               </div>
             </div>
 
-            <input type="submit" value="" />
+            <input type="submit" value="Delete" />
           </form>
           <div  className='edit-tag-input'>
             <input
