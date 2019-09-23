@@ -7,7 +7,7 @@ export default ({ user, logout, openModal, createDocument}) => {
   if (user) {
     display = {
             link1: <span >{user.email}</span>,
-            link2: <p onClick={logout}>Logout</p>
+            link2: <p className='btn' onClick={logout}>Logout</p>
     }
    } else{ 
      display = {

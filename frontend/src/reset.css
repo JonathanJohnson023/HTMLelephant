@@ -45,11 +45,6 @@ button:focus {
     cursor: pointer
 }
 
-.link2 p {
-	margin: 0;
-}
-
-
 #save-button {
     background: url(./save-button.png) no-repeat;
     height: 100px;

@@ -23,6 +23,7 @@
 
 .east-side {
     margin-right: 5%;
+    transition: all .9s ease-in-out;
 }
 
 .west-side {
@@ -47,7 +48,6 @@
 }
 
 .username-email li{
-    margin: 10px;
     font-family: 'DM Sans', sans-serif;
     font-size: 32px;
     cursor: pointer;
@@ -103,5 +103,18 @@
 }
 
 .btn{
-    margin: 0;
+    margin: 10px;
+    transition: all .75s ease-in-out;
+}
+
+/* strictly hypothetical */
+
+
+.btn-bye {
+    font-size: 0;
+    margin:0;
+}
+
+.east-compact {
+    margin-right: 100%
 }

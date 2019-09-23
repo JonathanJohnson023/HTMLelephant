@@ -34,7 +34,6 @@ class EditTag extends React.Component {
     } 
 
     render() {
-      debugger
       return (
         <div id='edit-tag-form'>
           <form onSubmit={this.handleSubmit}>
