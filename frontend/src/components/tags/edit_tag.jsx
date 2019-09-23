@@ -34,6 +34,7 @@ class EditTag extends React.Component {
     } 
 
     render() {
+      debugger
       return (
         <div id='edit-tag-form'>
           <form onSubmit={this.handleSubmit}>
@@ -79,7 +80,7 @@ class EditTag extends React.Component {
               </div>
             </div>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="" />
           </form>
           <div  className='edit-tag-input'>
             <input
@@ -92,7 +93,7 @@ class EditTag extends React.Component {
               onChange={this.props.handleFontSizeChange}
             />
             <small>
-              {this.props.tagObj.styles.filter(ele => ele[0] === "fontSize")[0][1]}
+              {/* {this.props.tagObj.styles.filter(ele => ele[0] === "fontSize")[0][1]} */}
             </small>
             {/* styles = [["font-family", "sans"], ["font-size", "20px"],
                 ["color", "red"]] */}

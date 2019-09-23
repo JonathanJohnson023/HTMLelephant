@@ -95,15 +95,14 @@ class ParseHTML extends React.Component{
   }
 
   handleFontSizeChange = e => {
+    
     let newFontSize = this.state.tagObj.styles
     for (let i = 0; i < newFontSize.length; i++) {
       if (newFontSize[i][0] === "fontSize") {
         newFontSize[i][1] = e.target.value;
       }
-    }
-
+    }  
     this.setState({ [this.state.tagObj.styles]: newFontSize });
-    // debugger
   }
   
   render() {
