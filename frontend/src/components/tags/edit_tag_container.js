@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createTag: data => dispatchEvent(createTag(data)),
+    createTag: data => dispatch(createTag(data)),
   };
 };
 
