@@ -1,42 +1,43 @@
 import React from 'react';
 import './tag.css'
 import axios from 'axios';
-class CreateTag extends React.Component{
-  constructor(props){
+class CreateTag extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = { 
-      type: "", 
+    this.state = {
+      type: "",
       styles: [],
       body: "",
-      files: [],
-      previews: []
+      // files: [],
+      // previews: []
     }
     this.handleClick = this.handleClick.bind(this);
     this.defaultStyling = this.defaultStyling.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
-  }  
+  }
   // ["color", "red"], ["fontSize", "40px"]
   // "<p style=style></p>"
-    // style = {{ backgroundImage: `url(${this.props.user.coverPhoto})` }}
+  // style = {{ backgroundImage: `url(${this.props.user.coverPhoto})` }}
 
-    defaultStyling(type) {
-      switch (type) {
-        case "p":
-          return [["fontSize", "21px"], ["color", "purple"], ["fontFamily", "none"]];
-        case "h1":
-          return [["fontSize", "55px"], ["color", "lightpink"],["fontFamily", "none"]];
-        case "image":
-          return [["width", "200px"], ["height", "200px"]];  
-        default:
-          return [];
-      }
+  defaultStyling(type) {
+    switch (type) {
+      case "p":
+        return [["fontSize", "21px"], ["color", "purple"], ["fontFamily", "none"]];
+      case "h1":
+        return [["fontSize", "55px"], ["color", "lightpink"], ["fontFamily", "none"]];
+      case "img":
+        return [["width", "200px"], ["height", "200px"]];
+      default:
+        return [];
     }
+  }
 
-  handleClick(e){
+  handleClick(e) {
     e.preventDefault();
     let defaultStyles = this.defaultStyling(e.target.value)
-    this.setState({ styles: defaultStyles})
-    this.setState({ type: e.target.value}, () => this.props.addTag(this.state));
+    this.setState({ styles: defaultStyles })
+    debugger
+    this.setState({ type: e.target.value }, () => this.props.addTag(this.state));
   };
 
   pushButton() {
@@ -54,6 +55,19 @@ class CreateTag extends React.Component{
     }
   }
 
+  // handleFileUpload(e) {
+  //   e.preventDefault();
+  //   const imgURL = URL.createObjectURL(e.target.files[0]);
+
+  //   let defaultStyles = this.defaultStyling("img");
+  //   this.props.uploadSuccess(imgURL);
+
+  //   defaultStyles.push(["src", imgURL]);
+  //   this.setState({ styles: defaultStyles })
+  //   debugger
+  //   this.setState({ type: "img" }, () => this.props.addTag(this.state));
+  // }
+
   handleFileUpload(e) {
     e.preventDefault();
     // const file = URL.createObjectURL(e.target.files[0]);
@@ -69,22 +83,6 @@ class CreateTag extends React.Component{
       file = URL.createObjectURL(file);
       this.props.uploadSuccess(file);
     }
-    // debugger
-    
-    // fileReader.onloadend = () => {
-    //   const newState =  Object.assign({}, this.state);
-    //   newState.previews.push(fileReader.result);
-    //   this.setState(newState);
-    // };
-    // if (file) {
-    //   fileReader.readAsDataURL(file);
-
-    // }
-    // debugger
-
-    // let defaultStyles = this.defaultStyling("image");
-    // this.setState({ styles: defaultStyles })
-    // this.setState({ type: "image" }, () => this.props.addTag(this.state));
   }
 
   render() {
@@ -92,21 +90,22 @@ class CreateTag extends React.Component{
       return <div className="preview-img">
         <img src={preview} />
       </div>
-    })
-      return (
-        <div id='dropdown-time'>
-          <div id='add-tag-button' onClick={this.pushButton}></div>
-          <ul id='create-tag-list' className='closed'>
-              <li><button value="p" onClick={(e) => this.handleClick(e)}>Add Text</button></li>
-              <li><button value="h1" onClick={(e) => this.handleClick(e)}>Add Header</button></li>
-              <li><input className="inputGroupFile01" type="file" onChange={this.handleFileUpload} />Add Image</li>
+    });
 
-            {filePreview}
-            
-          </ul>
-          
-        </div>
-      )
+    return (
+      <div id='dropdown-time'>
+        <div id='add-tag-button' onClick={this.pushButton}></div>
+        <ul id='create-tag-list' className='closed'>
+          <li><button value="p" onClick={(e) => this.handleClick(e)}>Add Text</button></li>
+          <li><button value="h1" onClick={(e) => this.handleClick(e)}>Add Header</button></li>
+          <li><input type="file" onChange={this.handleFileUpload} />Add Image</li>
+
+          {filePreview}
+
+        </ul>
+
+      </div>
+    )
   }
 
 }

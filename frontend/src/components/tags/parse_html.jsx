@@ -51,6 +51,9 @@ class ParseHTML extends React.Component{
       case "h1":
         styles = this.parseStyles()
         return <h1 style={styles}>{this.state.tagObj.body ? this.state.tagObj.body : "Add your Header here"}</h1>
+      case "img":
+        styles = this.parseStyles()
+        return <img style={styles}/>  
       default:
         return null
     }
