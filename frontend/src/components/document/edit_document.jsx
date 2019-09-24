@@ -13,6 +13,8 @@ class EditDocument extends React.Component {
     }
     this.addTag = this.addTag.bind(this);
     this.saveProgress = this.saveProgress.bind(this);
+    this.updateTagBody = this.updateTagBody.bind(this);
+    this.deleteTag = this.deleteTag.bind(this);
   }
 
   componentDidMount(){
@@ -30,10 +32,27 @@ class EditDocument extends React.Component {
 
   addTag(tag){
     const tags = this.state.tags.slice()
+    tag.fakeId = Math.floor(Math.random()*10001)
     tags.push(tag);
     this.setState({tags});
   }
 
+  updateTagBody(event, index){
+    const tagsArray = this.state.tags.slice()
+    tagsArray[index].body = event.target.value
+    this.setState({tags: tagsArray})
+  }
+
+  deleteTag(index){
+    const tagsArray = this.state.tags.slice();
+    if(tagsArray[index]._id){
+      this.props.deleteTag(tagsArray[index]._id, index).then(tagsArray.splice(index, 1))
+    } else {
+      debugger
+      tagsArray.splice(index, 1)
+    }
+    this.setState({tags: tagsArray})
+  }
 
   saveProgress(){
     if(this.props.isAuthenticated === true){
@@ -82,16 +101,16 @@ class EditDocument extends React.Component {
             {this.state.tags.map((ele,i) => (
               <ParseHTML 
               tagObj={ele}
-              key={i}
+              key={ele.fakeId}
               index={i}
               editingTag={this.props.editingTag}
               editing={this.props.editing}
+              updateTagBody={this.updateTagBody}
+              deleteTag={this.deleteTag}
               />
             ))}
           </div>
           <button id='download-button' onClick={this.htmlDownload}></button>
-          {/* <h1>Hello From Edit</h1>
-          <p>this is a little subtitle</p> */}
       </div>
     )
   }

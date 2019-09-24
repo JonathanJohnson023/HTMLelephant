@@ -61,4 +61,18 @@ router.post('/',
   );
 
 
+  router.patch('/:tagId', (req, res) =>{
+    Tag.findByIdAndUpdate(req.params.TagId, req.body)
+        .then(tag => {
+            res.json(tag)
+        })
+})
+
+
+router.delete('/:tagId', (req, res) =>{
+  Tag.findOneAndDelete({ _id: req.params.tagId})
+      .exec()
+      .then(tag => {res.json(tag)})
+})
+
 module.exports = router;
