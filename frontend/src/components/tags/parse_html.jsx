@@ -12,6 +12,8 @@ class ParseHTML extends React.Component{
       this.toggleEdit = this.toggleEdit.bind(this);
       this.handleFontChange = this.handleFontChange.bind(this);
       this.handleFontSizeChange = this.handleFontSizeChange.bind(this);
+      this.handleImgWidthChange = this.handleImgWidthChange.bind(this);
+      this.handleImgHeightChange = this.handleImgHeightChange.bind(this);
     }
 
     // componentDidMount(){
@@ -134,11 +136,35 @@ class ParseHTML extends React.Component{
     let newFontSize = this.state.tagObj.styles
     for (let i = 0; i < newFontSize.length; i++) {
       if (newFontSize[i][0] === "fontSize") {
-        newFontSize[i][1] = e.target.value;
+        newFontSize[i][1] = e.target.value; 
       }
     }  
     this.setState({ [this.state.tagObj.styles]: newFontSize });
     return newFontSize
+  }
+
+  handleImgWidthChange = e => {
+
+    let newWidth = this.state.tagObj.styles
+    for (let i = 0; i < newWidth.length; i++) {
+      if (newWidth[i][0] === "width") {
+        newWidth[i][1] = e.target.value;
+      }
+    }
+    this.setState({ [this.state.tagObj.styles]: newWidth });
+    return newWidth
+  }
+
+  handleImgHeightChange = e => {
+
+    let newHeight = this.state.tagObj.styles
+    for (let i = 0; i < newHeight.length; i++) {
+      if (newHeight[i][0] === "height") {
+        newHeight[i][1] = e.target.value;
+      }
+    }
+    this.setState({ [this.state.tagObj.styles]: newHeight });
+    return newHeight
   }
   
   render() {
@@ -152,6 +178,8 @@ class ParseHTML extends React.Component{
         handleChange={this.handleColorChange}
         handleFontChange={this.handleFontChange}
         handleFontSizeChange={this.handleFontSizeChange}
+        handleImgWidthChange={this.handleImgWidthChange}
+        handleImgHeightChange={this.handleImgHeightChange}
         deleteTag={this.props.deleteTag}
       />
     }else{
