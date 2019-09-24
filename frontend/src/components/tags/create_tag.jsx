@@ -55,8 +55,8 @@ class CreateTag extends React.Component {
     const imgURL = URL.createObjectURL(file);
     let defaultStyles = this.defaultStyling("img");
     // this.props.uploadSuccess(imgURL);
-    
-    this.setState({ imgURL, filename: file.name, styles: defaultStyles })
+    let defaultParentStyling = this.defaultParentStyling('img')
+    this.setState({ imgURL, filename: file.name, styles: defaultStyles, parentStyles: defaultParentStyling})
     this.setState({ type: "img" }, () => this.props.addTag(this.state));
   }
 

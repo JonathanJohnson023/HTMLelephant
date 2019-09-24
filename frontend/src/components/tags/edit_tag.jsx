@@ -49,13 +49,7 @@ class EditTag extends React.Component {
                 onChange={this.props.handleChange}
               />
             </div>
-            <div className='edit-tag-input' id='text-align-dropdown'>
-            <p>textAlign=</p>  <select name="text-align" >
-                <option value="left">Left</option>
-                <option value="center">Center</option>
-                <option value="right">Right</option>
-              </select>
-            </div>
+            
             <div className='edit-tag-input'>
             <p>body=</p> <input
                 type="textarea"
