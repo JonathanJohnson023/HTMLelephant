@@ -32,13 +32,13 @@ class CreateTag extends React.Component {
           return [];
       }
     }
-  }
+
   defaultParentStyling(type) {
       switch(type) {
         case 'p':
           return [['position', 'absolute']]
         default:
-          return []
+          return [];
       }
   }
 
