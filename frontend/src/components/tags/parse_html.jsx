@@ -17,12 +17,12 @@ class ParseHTML extends React.Component{
     // componentDidMount(){
     //   const tag = document.getElementById(`${this.props.index}`)
     //   tag.addEventListener("click", (event) => {
-    //     debugger
     //     if(event.currentTarget.id != this.props.index){
     //       this.setState({editing: false})
     //     }
     //   })
     // }
+    
     dragElement(elmnt) {
       var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
       if (document.getElementById(elmnt.id + "element")) {
@@ -77,7 +77,6 @@ class ParseHTML extends React.Component{
   }
 
   parseParentStyles = () => {
-    debugger
     if (this.state.tagObj.parentStyles) {
     let parentStyles = {};
     this.state.tagObj.parentStyles.forEach(ele => parentStyles[ele[0]] = ele[1]);
