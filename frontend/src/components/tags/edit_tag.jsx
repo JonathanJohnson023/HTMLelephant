@@ -43,6 +43,7 @@ class EditTag extends React.Component {
       if (this.state.type === 'img') {
         return (
           <div id='edit-tag-form'>
+            <div>
             <input
               type="range"
               min="100"
