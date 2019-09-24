@@ -30,6 +30,7 @@ export const editDocument = data => dispatch => {
 };
 
 export const fetchDocument = id => dispatch => {
+    
     return (
         DocumentAPIUtil.fetchDocument(id)
         .then(doc => dispatch(addNewDocument(doc.data)))

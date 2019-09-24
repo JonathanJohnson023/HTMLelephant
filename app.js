@@ -9,6 +9,7 @@ const app = express();
 const users = require("./routes/api/users")
 const tags = require("./routes/api/tags")
 const document = require("./routes/api/document")
+const uploads = require("./routes/api/uploads")
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -33,6 +34,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users)
 app.use("/api/tags", tags)
 app.use("/api/documents", document)
+app.use("/api/uploads", uploads)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
