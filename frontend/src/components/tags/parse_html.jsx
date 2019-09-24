@@ -37,7 +37,7 @@ class ParseHTML extends React.Component{
     
       function dragMouseDown(e) {
         e = e || window.event;
-        e.preventDefault();
+        // e.preventDefault();
         // get the mouse cursor position at startup:
         pos3 = e.clientX;
         pos4 = e.clientY;
@@ -48,7 +48,7 @@ class ParseHTML extends React.Component{
     
       function elementDrag(e) {
         e = e || window.event;
-        e.preventDefault();
+        // e.preventDefault();
         // calculate the new cursor position:
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
@@ -57,6 +57,7 @@ class ParseHTML extends React.Component{
         // set the element's new position:
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
       }
     
       function closeDragElement() {
@@ -144,6 +145,8 @@ class ParseHTML extends React.Component{
     this.setState({ [this.state.tagObj.styles]: newFontSize });
     return newFontSize
   }
+
+
 
   handleImgWidthChange = e => {
 

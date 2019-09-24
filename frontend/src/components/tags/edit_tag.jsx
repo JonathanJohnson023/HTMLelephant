@@ -42,6 +42,7 @@ class EditTag extends React.Component {
 
       if (this.state.type === 'img') {
         return (
+         <div> 
           <div id='edit-tag-form'>
             <input
               type="range"
@@ -60,7 +61,7 @@ class EditTag extends React.Component {
           </div>
           <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
         </div>
-      ); 
+      ) 
       } else {
         return (
           <div id='edit-tag-form'>
