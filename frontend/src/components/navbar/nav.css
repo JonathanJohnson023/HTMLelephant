@@ -103,6 +103,7 @@
 }
 
 .btn{
+
     margin: 10px;
     transition: all .75s ease-in-out;
 }
@@ -118,3 +119,4 @@
 .east-compact {
     margin-right: 100%
 }
+

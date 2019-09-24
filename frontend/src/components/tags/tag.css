@@ -97,7 +97,7 @@
     z-index: 50;
     margin-top: calc(6% + 50px);
     top: 0;
-    height: calc(84% + 5px);
+    height: calc(83% + 5px);
     animation: .5s ease-out 0s 1 slideInFromRight;
 }
 #edit-tag-h1 {
@@ -127,6 +127,10 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 28px;
     margin: 5px 5px 5px 15px;
+}
+
+.edit-tag-input p:hover {
+    text-shadow: none;
 }
 
 #edit-form-container {
