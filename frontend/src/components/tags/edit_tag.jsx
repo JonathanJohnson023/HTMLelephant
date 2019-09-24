@@ -39,6 +39,7 @@ class EditTag extends React.Component {
     render() {
       let TE = '<Text Editor/>'
       
+
       if (this.state.type === 'img') {
         return (
           <div id='edit-tag-form'>
@@ -61,7 +62,9 @@ class EditTag extends React.Component {
               onChange={this.props.handleFontSizeChange}
             />
           </div>
-        )
+          <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
+        </div>
+      ); 
       } else {
         return (
           <div id='edit-tag-form'>
