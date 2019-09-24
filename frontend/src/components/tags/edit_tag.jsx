@@ -17,7 +17,6 @@ class EditTag extends React.Component {
     
 
     update(theType) {
-
       return (e) => {
           this.setState({ [theType]: e.target.value });
       };

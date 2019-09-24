@@ -17,7 +17,6 @@ class ParseHTML extends React.Component{
     // componentDidMount(){
     //   const tag = document.getElementById(`${this.props.index}`)
     //   tag.addEventListener("click", (event) => {
-    //     debugger
     //     if(event.currentTarget.id != this.props.index){
     //       this.setState({editing: false})
     //     }
@@ -77,7 +76,6 @@ class ParseHTML extends React.Component{
   }
 
   parseParentStyles = () => {
-    debugger
     if (this.state.tagObj.parentStyles) {
     let parentStyles = {};
     this.state.tagObj.parentStyles.forEach(ele => parentStyles[ele[0]] = ele[1]);
