@@ -120,7 +120,7 @@ class CreateTag extends React.Component {
           <div id='add-tag-button' onClick={this.pushButton}></div>
           <ul id='create-tag-list' className='closed'>
               <li><button value="p" onClick={(e) => this.handleClick(e)}>Add Text</button></li>
-              <li><input type="file" onChange={this.handleFileUpload} />Add Image</li>
+              <li id='file-upload-wrapper'><input id='file-upload' type="file" onChange={this.handleFileUpload} />Add Image</li>
               {filePreview}
           </ul>
         </div>

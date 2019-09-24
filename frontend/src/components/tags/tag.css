@@ -78,6 +78,35 @@
     
 }
 
+#file-upload-wrapper{
+    width: 100px;  
+    border: none;   
+    background: none;
+    color: black;
+    font-size: 24px;
+    font-family: 'DM Sans', sans-serif;
+    
+}
+
+#file-upload-wrapper:hover {
+    background: cornflowerblue;
+    transition: all .25s ease-in-out;
+    
+}
+
+#file-upload-wrapper:focus {
+    outline:none;
+    
+}
+
+#file-upload {
+    position: absolute;
+    height: 62px;   
+    width: 100px;
+    left: 0;
+    opacity: 0;
+}
+
 #create-tag-list li:first-of-type {
     margin-top: 69px;
 }
