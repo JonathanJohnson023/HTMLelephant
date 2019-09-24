@@ -102,7 +102,7 @@ class ParseHTML extends React.Component{
         return <p  id={tagId} style={styles}>{this.state.tagObj.body ? this.state.tagObj.body : "Click Here to Change text"}</p>
       case "img":
         styles = this.parseStyles()
-        return <img style={styles}/>  
+        return <img src={this.state.tagObj.imgURL} style={styles}/>  
       default:
         return null
     }

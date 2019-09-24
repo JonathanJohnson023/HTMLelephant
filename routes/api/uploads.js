@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
+const Tag = require("../../models/Tag")
 const mongoURI = keys.mongoURI;
 
 const storage = new GridFsStorage({

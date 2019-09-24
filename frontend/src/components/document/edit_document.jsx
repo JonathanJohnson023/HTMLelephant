@@ -48,7 +48,6 @@ class EditDocument extends React.Component {
     if(tagsArray[index]._id){
       this.props.deleteTag(tagsArray[index]._id, index).then(tagsArray.splice(index, 1))
     } else {
-      debugger
       tagsArray.splice(index, 1)
     }
     this.setState({tags: tagsArray})
