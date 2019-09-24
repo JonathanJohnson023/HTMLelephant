@@ -8,7 +8,6 @@ class ParseHTML extends React.Component{
         tagObj: this.props.tagObj,
         editing: false
       };
-      this.updateTag = this.updateTag.bind(this);
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
       this.handleFontChange = this.handleFontChange.bind(this);
@@ -106,10 +105,6 @@ class ParseHTML extends React.Component{
         return null
     }
   }
-
-  updateTag(tag){
-    this.setState({tagObj: tag})
-  }
   
   handleColorChange = (color) => {
     let newColor = this.state.tagObj.styles
@@ -150,10 +145,12 @@ class ParseHTML extends React.Component{
     if(this.state.editing){
       editTag = <EditTag 
         tagObj={this.state.tagObj} 
-        updateTag={this.updateTag} 
+        updateTagBody={this.props.updateTagBody}
+        index={this.props.index}
         handleChange={this.handleColorChange}
         handleFontChange={this.handleFontChange}
         handleFontSizeChange={this.handleFontSizeChange}
+        deleteTag={this.props.deleteTag}
       />
     }else{
       editTag = ""
