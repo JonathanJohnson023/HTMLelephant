@@ -19,7 +19,9 @@ class EditDocument extends React.Component {
     const documentId = this.props.match.params.id
     if(documentId){
       this.props.fetchDocument(documentId).then(doc => {
+        
         this.props.fetchDocumentTags(documentId).then(payload => {
+          
           this.setState({tags: Object.values(payload.tags)})
         })
       })
