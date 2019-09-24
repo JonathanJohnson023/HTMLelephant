@@ -47,19 +47,15 @@ class EditTag extends React.Component {
               type="range"
               min="100"
               max="800"
-              className="slider"
-              name="slider"
               id="img-width-slider"
-              onChange={this.props.handleFontSizeChange}
+              onChange={this.props.handleImgWidthChange}
             />
             <input
               type="range"
               min="100"
               max="800"
-              className="slider"
-              name="slider"
-              id="img-width-slider"
-              onChange={this.props.handleFontSizeChange}
+              id="img-height-slider"
+              onChange={this.props.handleImgHeightChange}
             />
           </div>
           <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
