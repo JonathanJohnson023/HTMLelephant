@@ -49,7 +49,6 @@ class EditTag extends React.Component {
                 onChange={this.props.handleChange}
               />
             </div>
-            
             <div className='edit-tag-input'>
             <p>body=</p> <input
                 type="textarea"
@@ -80,7 +79,6 @@ class EditTag extends React.Component {
               </div>
             </div>
           </form>
-            <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
           <div  className='edit-tag-input'>
             <input
               type="range"
@@ -99,7 +97,7 @@ class EditTag extends React.Component {
                 ["color", "red"]] */}
             {/* styles.filter(ele => ele[0] === "font-size")[0][1] */}
           </div>
-          <input type="submit" id='delete-button' value="Delete Element" />
+          <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
         </div>
       );
     }
