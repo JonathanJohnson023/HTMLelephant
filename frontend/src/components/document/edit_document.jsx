@@ -21,7 +21,9 @@ class EditDocument extends React.Component {
     const documentId = this.props.match.params.id
     if(documentId){
       this.props.fetchDocument(documentId).then(doc => {
+        
         this.props.fetchDocumentTags(documentId).then(payload => {
+          
           this.setState({tags: Object.values(payload.tags)})
         })
       })
@@ -46,7 +48,6 @@ class EditDocument extends React.Component {
     if(tagsArray[index]._id){
       this.props.deleteTag(tagsArray[index]._id, index).then(tagsArray.splice(index, 1))
     } else {
-      debugger
       tagsArray.splice(index, 1)
     }
     this.setState({tags: tagsArray})

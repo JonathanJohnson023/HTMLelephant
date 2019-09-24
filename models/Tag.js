@@ -14,6 +14,10 @@ const TagSchema = new Schema({
     type: String,
     required: true
   },
+  filename: {
+    type: String,
+    required: false
+  },
   document:{
     type: Schema.Types.ObjectId,
     ref: "documents"

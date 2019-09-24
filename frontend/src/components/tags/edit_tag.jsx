@@ -38,7 +38,7 @@ class EditTag extends React.Component {
 
     render() {
       let TE = '<Text Editor/>'
-
+      
       return (
         <div id='edit-tag-form'>
           <form>

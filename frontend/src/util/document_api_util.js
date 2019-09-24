@@ -9,5 +9,6 @@ export const editDocument = (data) => {
 }
 
 export const fetchDocument = id => {
+  
   return axios.get(`/api/documents/${id}`)
 }
