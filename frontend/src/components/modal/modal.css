@@ -52,6 +52,14 @@
    
 }
 
+.modal-form p{
+    color: lightpink;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    line-height: 20px;
+}
+
 .modal-form-form {
     display: flex;
     justify-content: center;

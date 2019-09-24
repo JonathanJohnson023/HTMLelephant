@@ -14,6 +14,7 @@ class EditTag extends React.Component {
     }
 
     update(theType) {
+
       return (e) => {
           this.setState({ [theType]: e.target.value });
       };
@@ -34,25 +35,33 @@ class EditTag extends React.Component {
     // } 
 
     render() {
+
       return (
         <div id='edit-tag-form'>
           <form>
             <h1 id='edit-tag-h1'>Text Editor</h1>
+      let TE = '<Text Editor/>'
+      return (
+        <div id='edit-tag-form'>
+          <form>
+            <h1 id='edit-tag-h1'>{TE}</h1>
             <div id='color-picker' className="edit-tag-input">
               <CirclePicker
                 color={this.state.styles.filter(ele => ele[0] === "color")[0][1]}
                 onChange={this.props.handleChange}
               />
             </div>
-            <div className='edit-tag-input'>
-            Text Align:  <select name="text-align">
+            <div className='edit-tag-input' id='text-align-dropdown'>
+            <p>textAlign=</p>  <select name="text-align" >
                 <option value="left">Left</option>
                 <option value="center">Center</option>
                 <option value="right">Right</option>
               </select>
-              <br></br>
-              Body: <input
+            </div>
+            <div className='edit-tag-input'>
+            <p>body=</p> <input
                 type="textarea"
+                id='tag-textarea'
                 placeholder='Add Your Text Here'
                 value={this.state.body}
                 onChange={this.handleBodyUpdate}
@@ -60,7 +69,7 @@ class EditTag extends React.Component {
             </div>
             <div  className='edit-tag-input'>
               <div action="">
-                Font: <select name="fonts" id="" onChange={this.props.handleFontChange}>
+              <p>font=</p> <select name="fonts" id="font-dropdown" onChange={this.props.handleFontChange}>
                   <option value="Times New Roman">Times New Roman</option>
                   <option value="sans-serif">Sans-serif</option>
                   <option value="Verdana">Verdana</option>
@@ -78,7 +87,6 @@ class EditTag extends React.Component {
                 </select>
               </div>
             </div>
-
           </form>
             <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
           <div  className='edit-tag-input'>
@@ -92,12 +100,14 @@ class EditTag extends React.Component {
               onChange={this.props.handleFontSizeChange}
             />
             <small>
+              {this.state.styles.filter(ele => ele[0] === "fontSize")[0][1]}
               {/* {this.props.tagObj.styles.filter(ele => ele[0] === "fontSize")[0][1]} */}
             </small>
             {/* styles = [["font-family", "sans"], ["font-size", "20px"],
                 ["color", "red"]] */}
             {/* styles.filter(ele => ele[0] === "font-size")[0][1] */}
           </div>
+          <input type="submit" id='delete-button' value="Delete Element" />
         </div>
       );
     }
