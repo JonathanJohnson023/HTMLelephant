@@ -7,6 +7,7 @@ class CreateTag extends React.Component{
       type: "", 
       styles: [],
       body: "",
+      
     }
     this.handleClick = this.handleClick.bind(this);
     this.defaultStyling = this.defaultStyling.bind(this);

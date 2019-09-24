@@ -10,7 +10,7 @@ class EditTag extends React.Component {
         styles: this.props.tagObj.styles,
         body: this.props.tagObj.body,
       }
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleBodyUpdate = this.handleBodyUpdate.bind(this);
     }
 
     update(theType) {
@@ -19,25 +19,24 @@ class EditTag extends React.Component {
       };
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.updateTag(this.state)
-    };
+    handleBodyUpdate(event){
+      this.setState({body: event.target.value})
+      this.props.updateTagBody(event, this.props.index)
+    }
 
     sliderWork() {
       console.log('Howdy Partner!') 
     }
 
 
-    componentDidUpdate(){
-      this.props.updateTag(this.state)
-    } 
+    // componentDidUpdate(){
+    //   this.props.updateTag(this.state)
+    // } 
 
     render() {
-      debugger
       return (
         <div id='edit-tag-form'>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <h1 id='edit-tag-h1'>Text Editor</h1>
             <div id='color-picker' className="edit-tag-input">
               <CirclePicker
@@ -56,7 +55,7 @@ class EditTag extends React.Component {
                 type="textarea"
                 placeholder='Add Your Text Here'
                 value={this.state.body}
-                onChange={this.update("body")}
+                onChange={this.handleBodyUpdate}
               />
             </div>
             <div  className='edit-tag-input'>
@@ -80,8 +79,8 @@ class EditTag extends React.Component {
               </div>
             </div>
 
-            <input type="submit" value="Delete" />
           </form>
+            <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
           <div  className='edit-tag-input'>
             <input
               type="range"
