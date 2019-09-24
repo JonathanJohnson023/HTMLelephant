@@ -35,12 +35,8 @@ class EditTag extends React.Component {
     // } 
 
     render() {
-
-      return (
-        <div id='edit-tag-form'>
-          <form>
-            <h1 id='edit-tag-h1'>Text Editor</h1>
       let TE = '<Text Editor/>'
+
       return (
         <div id='edit-tag-form'>
           <form>
