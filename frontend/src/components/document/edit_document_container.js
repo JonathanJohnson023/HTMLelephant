@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import EditDocument from "./edit_document"
 import { createDocument, addNewDocument, editDocument, fetchDocument } from '../../actions/document_actions';
-import {editingTag, createTag, saveTagCollection, addTags, fetchDocumentTags} from "../../actions/tag_actions"
+import {editingTag, createTag, saveTagCollection, addTags, fetchDocumentTags, deleteTag, updateTag} from "../../actions/tag_actions"
 import {openModal } from "../../actions/modal_actions";
 import {withRouter} from "react-router"
 import {tagSelector} from "../../util/tag_selector"
@@ -29,7 +29,9 @@ const mapDispatchToProps = dispatch => {
     openModal: modal => dispatch(openModal(modal)),
     editDocument: (doc) => dispatch(editDocument(doc)),
     fetchDocumentTags: (id) => dispatch(fetchDocumentTags(id)),
-    fetchDocument: (id) => dispatch(fetchDocument(id))
+    fetchDocument: (id) => dispatch(fetchDocument(id)),
+    deleteTag: (id, index) => dispatch(deleteTag(id, index)),
+    updateTag: (tag) => dispatch(updateTag(tag))
 
   };
 };

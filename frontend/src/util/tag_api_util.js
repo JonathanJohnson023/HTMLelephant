@@ -12,3 +12,11 @@ export const addTag = data => {
 export const saveTagCollection = data => {
     return axios.post('/api/tags/collection', data)
 }
+
+export const updateTag = (data) => {
+    return axios.patch(`/api/tags/${data.id}`, data)
+}
+
+export const deleteTag = (id) => {
+    return axios.delete(`/api/tags/${id}`)
+}

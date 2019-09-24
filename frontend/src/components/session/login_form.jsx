@@ -104,6 +104,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className='modal-form'>
+                <p>Login to save your work and pick it up again later!</p>
                 <form onSubmit={this.handleSubmit}>
                     <div className="modal-form-form" id='modal-login-form'>
                         <br />

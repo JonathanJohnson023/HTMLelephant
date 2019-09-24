@@ -18,6 +18,10 @@ const TagSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "documents"
   },
+  parentStyles: {
+    type: Array,
+    require: true
+  },
   date: {
     type: Date,
     default: Date.now

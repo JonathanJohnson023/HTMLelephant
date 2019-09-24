@@ -9,6 +9,10 @@
     z-index: 51;
 }
 
+/* #hello-there p:hover {
+   text-shadow: 2px 2px lightgray;
+} */
+
 #hello-there dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,

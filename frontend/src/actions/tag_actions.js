@@ -4,6 +4,7 @@ export const ADD_NEW_TAG = "ADD_NEW_TAG"
 export const RECEIVE_CURRENT_TAG = "RECEIVE_CURRENT_TAG"
 export const EDITING_TAG = "EDITING_TAG"
 export const RECEIVE_TAGS = "RECEIVE_TAGS"
+export const DELETE_TAG = "DELETE_TAG"
 
 export const receiveDocumentTags = tags => ({
     type: RECEIVE_DOCUMENT_TAGS,
@@ -22,6 +23,17 @@ export const currentTag = currentTag => ({
 
 export const editingTag = index => ({
     type: EDITING_TAG,
+    index
+})
+
+export const addTags = data => ({
+    type: RECEIVE_TAGS,
+    data
+});
+
+export const receiveDeleteTag = (data, index) => ({
+    type: DELETE_TAG,
+    data,
     index
 })
 
@@ -46,7 +58,18 @@ export const saveTagCollection = data => dispatch => (
      .catch(err => console.log(err))
 );
 
-export const addTags = data => ({
-    type: RECEIVE_TAGS,
-    data
-});
+export const updateTag = data => dispatch => {
+    return (
+        TagAPIUtil.updateTag(data)
+        .then(tag => dispatch(updateTag(tag.data)))
+        .catch(err => console.log(err))
+    )
+};
+
+export const deleteTag = (id, index) => dispatch => {
+    return (
+    TagAPIUtil.deleteTag(id)
+        .then(response => dispatch(receiveDeleteTag(response.data, index)))
+        .catch(err => console.log(err))
+    )
+};
