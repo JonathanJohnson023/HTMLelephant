@@ -35,20 +35,29 @@ class EditDocument extends React.Component {
 
   saveProgress(){
     if(this.props.isAuthenticated === true){
-      if(this.props.document === undefined){
-        this.props.createDocument({title: this.state.title})
-          .then(payload => {
+      if(this.props.document === undefined || this.props.match.path === "/" ){
+        this.props.createDocument({title: this.state.title}).then(payload => {
             const docId = payload.document._id
             const tags = this.state.tags.map((tag) => {
               tag.documentId = docId
               return tag
             })
-             this.props.saveTagCollection(tags).then(() => {
-              this.props.history.push(`/edit/${docId}`)
+             this.props.saveTagCollection(tags).then((payload) => {
+                this.props.history.push(`/edit/${docId}`)
+                this.setState({tags: payload.tags})
               })
           })
       } else {
+        const tags = this.state.tags.filter((tag) => {
+          if(!tag._id){
+            tag.documentId = this.props.document._id
+            return tag
+          }
+        })
         this.props.editDocument({id: this.props.document._id, title: this.state.title })
+        this.props.saveTagCollection(tags).then((payload) => {
+            this.setState({tags: this.props.tags})
+          })
       }
     } else {
       this.props.addTags(this.state.tags)

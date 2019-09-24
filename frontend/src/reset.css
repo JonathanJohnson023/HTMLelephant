@@ -42,7 +42,7 @@ button:focus {
     bottom: 0;
 	margin-bottom: 2%;
     border:none;
-    cursor: pointer
+    cursor: pointer;
 }
 
 #save-button {
@@ -53,9 +53,18 @@ button:focus {
     position: absolute;
     left: 4%;
     z-index: 5;
-    transition: all .75s ease-in-out;
     bottom: 0;
 	margin-bottom: calc(2% + 120px);
     border:none;
     cursor: pointer;
+
+}
+
+#save-button:focus {
+    outline: none;
+}
+
+#save-button:hover {
+    background: url(./save-button-hover.png) no-repeat;
+    background-size: contain;
 }
