@@ -42,6 +42,7 @@ class EditTag extends React.Component {
         return (
          <div> 
           <div id='edit-tag-form'>
+            <div>
             <input
               type="range"
               min="100"
