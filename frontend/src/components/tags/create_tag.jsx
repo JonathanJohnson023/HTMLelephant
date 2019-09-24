@@ -7,7 +7,7 @@ class CreateTag extends React.Component{
       type: "", 
       styles: [],
       body: "",
-      
+      parentStyles: []
     }
     this.handleClick = this.handleClick.bind(this);
     this.defaultStyling = this.defaultStyling.bind(this);
@@ -25,10 +25,23 @@ class CreateTag extends React.Component{
       }
     }
 
+    defaultParentStyling(type) {
+      switch(type) {
+        case 'p':
+          return [['position', 'absolute']]
+        default:
+          return []
+      }
+    }
+
+    
+
   handleClick(e){
     e.preventDefault();
     let defaultStyles = this.defaultStyling(e.target.value)
+    let defaultParentStyling = this.defaultParentStyling(e.target.value)
     this.setState({ styles: defaultStyles})
+    this.setState({parentStyles: defaultParentStyling})
     this.setState({ type: e.target.value}, () => this.props.addTag(this.state));
   };
 

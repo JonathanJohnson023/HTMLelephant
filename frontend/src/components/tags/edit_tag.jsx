@@ -9,9 +9,12 @@ class EditTag extends React.Component {
         type: this.props.tagObj.type, 
         styles: this.props.tagObj.styles,
         body: this.props.tagObj.body,
+        parentStyles: this.props.tagObj.parentStyles
       }
       this.handleBodyUpdate = this.handleBodyUpdate.bind(this);
     }
+
+    
 
     update(theType) {
 
