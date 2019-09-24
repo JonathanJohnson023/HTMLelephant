@@ -6,7 +6,6 @@ const previewReducer = (state = [], action) => {
 
     switch (action.type) {
         case UPLOAD_DOCUMENT_SUCCESS:
-            // debugger
             let newState = state.slice();
             newState.push(action.data);
             return newState;
