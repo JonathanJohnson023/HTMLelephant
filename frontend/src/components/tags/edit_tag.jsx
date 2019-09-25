@@ -109,7 +109,6 @@ class EditTag extends React.Component {
                 </div>
               </div>
             </div>
-              <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
             <div  className='edit-tag-input'>
               <input
                 type="range"
