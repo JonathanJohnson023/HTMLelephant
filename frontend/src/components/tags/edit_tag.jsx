@@ -40,7 +40,6 @@ class EditTag extends React.Component {
       let TE = '<Text Editor/>'
       if (this.state.type === 'img') {
         return (
-         <div> 
           <div id='edit-tag-form'>
             <div>
             <input
@@ -61,7 +60,7 @@ class EditTag extends React.Component {
           </div>
           <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
         </div>
-      ) 
+      ); 
       } else {
         return (
           <div id='edit-tag-form'>
