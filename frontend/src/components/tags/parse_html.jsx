@@ -147,7 +147,7 @@ class ParseHTML extends React.Component{
     if(this.state.editing){
       editTag = <EditTag 
         tagObj={this.state.tagObj} 
-        updateTagBody={this.props.updateTagBody}
+        updateTag={this.props.updateTag}
         index={this.props.index}
         handleChange={this.handleColorChange}
         handleFontChange={this.handleFontChange}

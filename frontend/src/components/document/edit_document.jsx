@@ -13,7 +13,7 @@ class EditDocument extends React.Component {
     }
     this.addTag = this.addTag.bind(this);
     this.saveProgress = this.saveProgress.bind(this);
-    this.updateTagBody = this.updateTagBody.bind(this);
+    this.updateTag = this.updateTag.bind(this);
     this.deleteTag = this.deleteTag.bind(this);
   }
 
@@ -37,9 +37,14 @@ class EditDocument extends React.Component {
     this.setState({tags});
   }
 
-  updateTagBody(event, index){
+  updateTag(event, index, type){
     const tagsArray = this.state.tags.slice()
-    tagsArray[index].body = event.target.value
+    const tag = tagsArray[index]
+    tag[type] = event.target.value
+    tagsArray[index] = tag
+    if(tagsArray[index]._id){
+      this.props.updateTag(tagsArray[index], index)
+    }
     this.setState({tags: tagsArray})
   }
 
@@ -75,9 +80,11 @@ class EditDocument extends React.Component {
           }
         })
         this.props.editDocument({id: this.props.document._id, title: this.state.title })
+        if(tags.length > 0){
         this.props.saveTagCollection(tags).then((payload) => {
             this.setState({tags: this.props.tags})
           })
+        }
       }
     } else {
       this.props.addTags(this.state.tags)
@@ -104,7 +111,7 @@ class EditDocument extends React.Component {
               index={i}
               editingTag={this.props.editingTag}
               editing={this.props.editing}
-              updateTagBody={this.updateTagBody}
+              updateTag={this.updateTag}
               deleteTag={this.deleteTag}
               />
             ))}

@@ -11,20 +11,20 @@ class EditTag extends React.Component {
         body: this.props.tagObj.body,
         parentStyles: this.props.tagObj.parentStyles
       }
-      this.handleBodyUpdate = this.handleBodyUpdate.bind(this);
+      this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     
 
-    update(theType) {
-      return (e) => {
-          this.setState({ [theType]: e.target.value });
-      };
-    }
+    // update(theType) {
+    //   return (e) => {
+    //       this.setState({ [theType]: e.target.value });
+    //   };
+    // }
 
-    handleBodyUpdate(event){
-      this.setState({body: event.target.value})
-      this.props.updateTagBody(event, this.props.index)
+    handleUpdate(event, type){
+      this.setState({[type]: event.target.value})
+      this.props.updateTag(event, this.props.index, type)
     }
 
     sliderWork() {
@@ -62,7 +62,7 @@ class EditTag extends React.Component {
                 id='tag-textarea'
                 placeholder='Add Your Text Here'
                 value={this.state.body}
-                onChange={this.handleBodyUpdate}
+                onChange={(e) => this.handleUpdate(e, "body")}
               />
             </div>
             <div  className='edit-tag-input'>
