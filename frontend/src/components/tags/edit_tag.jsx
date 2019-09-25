@@ -64,7 +64,7 @@ class EditTag extends React.Component {
       } else {
         return (
           <div id='edit-tag-form'>
-            <form>
+            <div>
               <h1 id='edit-tag-h1'>{TE}</h1>
               <div id='color-picker' className="edit-tag-input">
                 <CirclePicker
@@ -85,7 +85,7 @@ class EditTag extends React.Component {
                   id='tag-textarea'
                   placeholder='Add Your Text Here'
                   value={this.state.body}
-                  onChange={this.handleBodyUpdate}
+                  onChange={(e) => this.handleUpdate(e, "body")}
                 />
               </div>
               <div  className='edit-tag-input'>
@@ -108,7 +108,8 @@ class EditTag extends React.Component {
                   </select>
                 </div>
               </div>
-            </form>
+            </div>
+              <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
             <div  className='edit-tag-input'>
               <input
                 type="range"
