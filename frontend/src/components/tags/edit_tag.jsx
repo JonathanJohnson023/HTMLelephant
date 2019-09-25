@@ -128,7 +128,7 @@ class EditTag extends React.Component {
                   ["color", "red"]] */}
               {/* styles.filter(ele => ele[0] === "font-size")[0][1] */}
             </div>
-            <input type="submit" id='delete-button' value="Delete Element" />
+            <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
           </div>
         );
       }
