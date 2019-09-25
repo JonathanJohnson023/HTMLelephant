@@ -67,10 +67,12 @@ class EditDocument extends React.Component {
               tag.documentId = docId
               return tag
             })
-             this.props.saveTagCollection(tags).then((payload) => {
+             if(tags.length > 0){
+               this.props.saveTagCollection(tags).then((payload) => {
                 this.props.history.push(`/edit/${docId}`)
                 this.setState({tags: payload.tags})
               })
+            }
           })
       } else {
         const tags = this.state.tags.filter((tag) => {
