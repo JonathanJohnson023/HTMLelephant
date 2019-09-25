@@ -85,7 +85,7 @@ class EditTag extends React.Component {
                   id='tag-textarea'
                   placeholder='Add Your Text Here'
                   value={this.state.body}
-                  onChange={this.handleBodyUpdate}
+                  onChange={(e) => this.handleUpdate(e, "body")}
                 />
               </div>
               <div  className='edit-tag-input'>
