@@ -64,7 +64,7 @@ class EditTag extends React.Component {
       } else {
         return (
           <div id='edit-tag-form'>
-            <form>
+            <div>
               <h1 id='edit-tag-h1'>{TE}</h1>
               <div id='color-picker' className="edit-tag-input">
                 <CirclePicker
@@ -108,7 +108,7 @@ class EditTag extends React.Component {
                   </select>
                 </div>
               </div>
-            </form>
+            </div>
               <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
             <div  className='edit-tag-input'>
               <input
