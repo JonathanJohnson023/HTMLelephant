@@ -62,8 +62,8 @@ router.post('/',
 
 
   router.patch('/:tagId', (req, res) =>{
-    Tag.findByIdAndUpdate(req.params.TagId, req.body)
-        .then(tag => {
+    Tag.findByIdAndUpdate(req.body._id, req.body)
+    .then(tag => {
             res.json(tag)
         })
 })

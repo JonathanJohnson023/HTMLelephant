@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
     fetchDocumentTags: (id) => dispatch(fetchDocumentTags(id)),
     fetchDocument: (id) => dispatch(fetchDocument(id)),
     deleteTag: (id, index) => dispatch(deleteTag(id, index)),
-    updateTag: (tag) => dispatch(updateTag(tag))
+    updateTag: (tag, index) => dispatch(updateTag(tag, index))
 
   };
 };

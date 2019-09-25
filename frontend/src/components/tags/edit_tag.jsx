@@ -11,20 +11,20 @@ class EditTag extends React.Component {
         body: this.props.tagObj.body,
         parentStyles: this.props.tagObj.parentStyles
       }
-      this.handleBodyUpdate = this.handleBodyUpdate.bind(this);
+      this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     
 
-    update(theType) {
-      return (e) => {
-          this.setState({ [theType]: e.target.value });
-      };
-    }
+    // update(theType) {
+    //   return (e) => {
+    //       this.setState({ [theType]: e.target.value });
+    //   };
+    // }
 
-    handleBodyUpdate(event){
-      this.setState({body: event.target.value})
-      this.props.updateTagBody(event, this.props.index)
+    handleUpdate(event, type){
+      this.setState({[type]: event.target.value})
+      this.props.updateTag(event, this.props.index, type)
     }
 
     sliderWork() {
@@ -38,8 +38,6 @@ class EditTag extends React.Component {
 
     render() {
       let TE = '<Text Editor/>'
-      
-
       if (this.state.type === 'img') {
         return (
          <div> 
@@ -51,6 +49,7 @@ class EditTag extends React.Component {
               id="img-width-slider"
               onChange={this.props.handleImgWidthChange}
             />
+
             <input
               type="range"
               min="100"
