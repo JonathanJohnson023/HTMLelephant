@@ -1,5 +1,5 @@
 import React from 'react';
-import { CirclePicker } from 'react-color';
+import { GithubPicker } from 'react-color';
 
 class EditTag extends React.Component {
     constructor(props) {
@@ -14,27 +14,10 @@ class EditTag extends React.Component {
       this.handleUpdate = this.handleUpdate.bind(this);
     }
 
-    
-
-    // update(theType) {
-    //   return (e) => {
-    //       this.setState({ [theType]: e.target.value });
-    //   };
-    // }
-
     handleUpdate(event, type){
       this.setState({[type]: event.target.value})
       this.props.updateTag(event, this.props.index, type)
     }
-
-    sliderWork() {
-      console.log('Howdy Partner!') 
-    }
-
-
-    // componentDidUpdate(){
-    //   this.props.updateTag(this.state)
-    // } 
 
     render() {
       let TE = '<Text Editor/>'
@@ -64,22 +47,21 @@ class EditTag extends React.Component {
       } else {
         return (
           <div id='edit-tag-form'>
-            <div>
               <h1 id='edit-tag-h1'>{TE}</h1>
               <div id='color-picker' className="edit-tag-input">
-                <CirclePicker
+                <GithubPicker
                   color={this.state.styles.filter(ele => ele[0] === "color")[0][1]}
                   onChange={this.props.handleChange}
                 />
               </div>
-              <div className='edit-tag-input' id='text-align-dropdown'>
+              {/* <div className='edit-tag-input' id='text-align-dropdown'>
               <p>textAlign=</p>  <select name="text-align" >
                   <option value="left">Left</option>
                   <option value="center">Center</option>
                   <option value="right">Right</option>
                 </select>
-              </div>
-              <div className='edit-tag-input'>
+              </div> */}
+              {/* <div className='edit-tag-input'>
               <p>body=</p> <input
                   type="textarea"
                   id='tag-textarea'
@@ -87,9 +69,9 @@ class EditTag extends React.Component {
                   value={this.state.body}
                   onChange={(e) => this.handleUpdate(e, "body")}
                 />
-              </div>
+              </div> */}
               <div  className='edit-tag-input'>
-                <div action="">
+                <div id='huh' action="">
                 <p>font=</p> <select name="fonts" id="font-dropdown" onChange={this.props.handleFontChange}>
                     <option value="Times New Roman">Times New Roman</option>
                     <option value="sans-serif">Sans-serif</option>
@@ -98,7 +80,7 @@ class EditTag extends React.Component {
                     <option value="Arial">Arial</option>
                     <option value="Open Sans">Open Sans</option>
                     <option value="Arial Black">Arial Black</option>
-                    <option value="Gadget">Gadget</option>
+                    {/* <option value="Gadget">Gadget</option> */}
                     <option value="Comic Sans MS">Comic Sans MS</option>
                     <option value="cursive">Cursive</option>
                     <option value="Tahoma">Tahoma</option>
@@ -108,25 +90,23 @@ class EditTag extends React.Component {
                   </select>
                 </div>
               </div>
-            </div>
-              <button onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
             <div  className='edit-tag-input'>
-              <input
-                type="range"
-                min="8"
-                max="100"
+              <p>fontSize=</p><select
                 className="slider"
                 name="slider"
-                id="font-size-slider"
+                id="font-size-dropdown"
                 onChange={this.props.handleFontSizeChange}
-              />
-              <small>
-                {this.state.styles.filter(ele => ele[0] === "fontSize")[0][1]}
-                {/* {this.props.tagObj.styles.filter(ele => ele[0] === "fontSize")[0][1]} */}
-              </small>
-              {/* styles = [["font-family", "sans"], ["font-size", "20px"],
-                  ["color", "red"]] */}
-              {/* styles.filter(ele => ele[0] === "font-size")[0][1] */}
+              >
+                <option value="8px">8px</option>
+                <option value="10px">10px</option>
+                <option value="12px">12px</option>
+                <option value="14px">14px</option>
+                <option value="16px">16px</option>
+                <option value="18px">18px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+              </select>
+
             </div>
             <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
           </div>

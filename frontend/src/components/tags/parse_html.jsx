@@ -10,6 +10,8 @@ class ParseHTML extends React.Component{
       };
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
+      // this.toggleDrag = this.toggleDrag.bind(this);
+      // this.handleClick = this.handleClick.bind(this)
       this.handleFontChange = this.handleFontChange.bind(this);
       this.handleFontSizeChange = this.handleFontSizeChange.bind(this);
       this.handleImgWidthChange = this.handleImgWidthChange.bind(this);
@@ -50,13 +52,26 @@ class ParseHTML extends React.Component{
         e = e || window.event;
         // e.preventDefault();
         // calculate the new cursor position:
+
+        let canvas = document.getElementById('hello-there')
+        let canLeft = canvas.offsetLeft - 3
+        let canRight = canLeft + canvas.offsetWidth - 3
+        let canTop = canvas.offsetTop
+        
+        let eleLeft = elmnt.offsetLeft - pos1
+        let eleTop = elmnt.offsetTop - pos2
+        let eleRight = eleLeft + elmnt.offsetWidth - pos1
+
+
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
+
         // set the element's new position:
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        // debugger
+        if (eleTop >= canTop)elmnt.style.top = (eleTop) + "px";
+        if (eleLeft >= canLeft && eleRight <= canRight) elmnt.style.left = (eleLeft) + "px";
 
       }
     
@@ -88,12 +103,26 @@ class ParseHTML extends React.Component{
       return {}
     }
   }
+
+  // handleClick(){
+  //   debugger
+  //   if (!this.state.editing){
+  //     this.toggleEdit()
+  //   } else {
+  //     this.toggleDrag()
+  //   }
+  // }
   
   toggleEdit() {
     this.setState({ editing: !this.state.editing })
+    this.props.editingTag(this.props.index)
     let div = document.getElementById(`${this.props.index}`)
     this.dragElement(div)
-    this.props.editingTag(this.props.index)
+  }
+
+  toggleDrag(){
+    let div = document.getElementById(`${this.props.index}`)
+    this.dragElement(div)
   }
   
   renderTag = () => {
