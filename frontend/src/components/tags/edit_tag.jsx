@@ -89,7 +89,7 @@ class EditTag extends React.Component {
                     <option value="monospace">monospace</option>
                   </select>
                 </div>
-              </div>
+            </div>
             <div  className='edit-tag-input'>
               <p>fontSize=</p><select
                 className="slider"
