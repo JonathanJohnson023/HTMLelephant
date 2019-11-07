@@ -43,6 +43,8 @@ button:focus {
 	margin-bottom: 2%;
     border:none;
     cursor: pointer;
+    box-shadow: 1px 1px 9px 2px #3f5f9a;
+    border-radius: 500px;
 }
 
 #save-button {
@@ -57,6 +59,8 @@ button:focus {
 	margin-bottom: calc(2% + 120px);
     border:none;
     cursor: pointer;
+    box-shadow: 1px 1px 9px 2px #3f5f9a;
+    border-radius: 500px;
 
 }
 
@@ -67,4 +71,6 @@ button:focus {
 #save-button:hover {
     background: url(./save-button-hover.png) no-repeat;
     background-size: contain;
+    box-shadow: 1px 1px 9px 2px #3f5f9a;
+    border-radius: 500px;
 }
