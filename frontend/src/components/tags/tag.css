@@ -117,17 +117,13 @@
 
 #edit-tag-form {
     background: cornflowerblue;
-    width: calc(8% + 100px);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    z-index: 50;
-    margin-top: calc(6% + 50px);
-    top: 0;
-    height: calc(83% + 5px);
+    height: 50px;
     animation: .5s ease-out 0s 1 slideInFromRight;
+    align-items: center;
+    width: 775px;
+    justify-content: space-around;
+    border-radius: 10px;
 }
 #edit-tag-h1 {
     width: 200px;
@@ -135,6 +131,7 @@
     font-family: 'DM Sans', sans-serif;
     background: lightpink;
     font-size: 30px;
+    display: none;;
 }
 
 #edit-tag-form form {
@@ -146,21 +143,22 @@
 }
 .edit-tag-input{
     margin: 5px;
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5% 0;
-    flex-wrap: wrap;
+}
+
+.edit-tag-input select:hover{
+    cursor: pointer;
 }
 
 .edit-tag-input p{
     font-family: 'DM Sans', sans-serif;
-    font-size: 28px;
     margin: 5px 5px 5px 15px;
 }
 
 .edit-tag-input p:hover {
     text-shadow: none;
+    cursor: default;
 }
 
 #edit-form-container {
@@ -185,7 +183,6 @@
 
 #color-picker {
     transition: all .5s ease-in-out;
-    width: 100%;
     display: flex;
     justify-content: center;
     padding: 5% 0;
@@ -193,8 +190,7 @@
 
 
 #color-picker:hover {
-    background: rgba(239, 247, 255, 1)
-
+    cursor: pointer;
 }
 
 .circle-picker {
@@ -206,7 +202,9 @@
     margin-bottom: -14px;
 }
 
-
+#huh{
+    display: inherit;
+}
 
 #text-align-dropdown select{
     position: relative;
@@ -218,6 +216,13 @@
 }
 
 #font-dropdown {
+    font-family: cursive;
+    background: lightpink;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+}
+
+#font-size-dropdown {
     font-family: cursive;
     background: lightpink;
     font-family: 'DM Sans', sans-serif;
@@ -246,6 +251,7 @@
 #delete-button:hover {
     background: rgb(192, 124, 134);
     transition: all .5s ease-in-out;
+    cursor: pointer;
 }
 
 

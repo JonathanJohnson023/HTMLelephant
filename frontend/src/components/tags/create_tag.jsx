@@ -66,24 +66,14 @@ class CreateTag extends React.Component {
     let list = document.getElementById('create-tag-list')
     let east = document.getElementsByClassName('east-side')[0]
     let navButtons = document.getElementsByClassName('btn')
-    if (button.classList.value === 'turned') {
-      button.classList.remove('turned')
-      list.classList.remove('open')
-      list.classList.add('closed')
-      east.classList.remove('east-compact')
+      button.classList.toggle('turned')
+      list.classList.toggle('open')
+      list.classList.toggle('closed')
+      east.classList.toggle('east-compact')
       for (let i = 0; i < navButtons.length; i++) {
-        navButtons[i].classList.remove('btn-bye')
+        navButtons[i].classList.toggle('btn-bye')
       }
-    }
-    else {
-      button.classList.add('turned')
-      list.classList.add('open')
-      list.classList.remove('closed')
-      east.classList.add('east-compact')
-      for (let i = 0; i < navButtons.length; i++) {
-        navButtons[i].classList.add('btn-bye')
-      }
-    }
+    
   }
 
 
