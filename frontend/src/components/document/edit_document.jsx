@@ -37,10 +37,10 @@ class EditDocument extends React.Component {
     this.setState({tags});
   }
 
-  updateTag(event, index, type){
+  updateTag(changes, index, type){
     const tagsArray = this.state.tags.slice()
     const tag = tagsArray[index]
-    tag[type] = event.target.value
+    tag[type] = changes
     tagsArray[index] = tag
     if(tagsArray[index]._id){
       this.props.updateTag(tagsArray[index], index)
