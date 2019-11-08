@@ -1,12 +1,16 @@
 import React from 'react';
 import EditTag from "./edit_tag_container"
+import ContentEditable from 'react-contenteditable'
 
 class ParseHTML extends React.Component{
   constructor(props){
     super(props)
+      this.contentEditable = React.createRef();
       this.state = {
         tagObj: this.props.tagObj,
-        editing: false
+        html: "",
+        editing: false,
+        bodyEdit: false,
       };
       this.handleColorChange = this.handleColorChange.bind(this);
       this.toggleEdit = this.toggleEdit.bind(this);
@@ -124,7 +128,17 @@ class ParseHTML extends React.Component{
     let div = document.getElementById(`${this.props.index}`)
     this.dragElement(div)
   }
-  
+
+  handleUpdate(event, key){
+    let tagClone = Object.assign({}, this.state.tagObj);
+    tagClone[key] = event.currentTarget.innerText
+    this.setState(
+      {tagObj: tagClone, bodyEdit: true}, 
+      this.props.updateTag(this.state.tagObj[key], this.props.index, key)
+      )
+    
+  }
+
   renderTag = () => {
     let styles;
     let tagId
@@ -132,7 +146,10 @@ class ParseHTML extends React.Component{
       case "p":
         styles = this.parseStyles()
         tagId = this.props.index + 'element'
-        return <p  id={tagId} style={styles}>{this.state.tagObj.body ? this.state.tagObj.body : "Click Here to Change text"}</p>
+        let tagBody = this.state.bodyEdit ? this.state.tagObj.body : "Click Here to Change text";
+        let finalPain = `<p id=${tagId}>${tagBody}</p>`
+        return <ContentEditable id={tagId} innerRef={this.contentEditable} html={finalPain} style={styles} disabled={false} onChange={(e) => this.handleUpdate(e, "body")}/> 
+
       case "img":
         styles = this.parseStyles()
         tagId = this.props.index + 'element'
@@ -219,9 +236,10 @@ class ParseHTML extends React.Component{
     }else{
       editTag = ""
     }
+    let tag = this.renderTag()
     return (
       <div id={this.props.index} onClick={this.toggleEdit} style={parentStyling}>
-          {this.renderTag()}
+          {tag}
         <div onClick={e => e.stopPropagation()}>
           {editTag}
         </div>
